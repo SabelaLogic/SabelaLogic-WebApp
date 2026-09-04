@@ -1,0 +1,29 @@
+import { Nav } from "@/components/marketing/Nav";
+import { Hero } from "@/components/marketing/Hero";
+import { TurnaroundSection } from "@/components/marketing/TurnaroundSection";
+import { WorkSection } from "@/components/marketing/WorkSection";
+import { ProofSection } from "@/components/marketing/ProofSection";
+import { ProcessSection } from "@/components/marketing/ProcessSection";
+import { BuildLogSection } from "@/components/marketing/BuildLogSection";
+import { GeneratorSection } from "@/components/marketing/GeneratorSection";
+import { ServicesSection } from "@/components/marketing/ServicesSection";
+import { ContactSection } from "@/components/marketing/ContactSection";
+import { Footer } from "@/components/marketing/Footer";
+
+export default function Home() {
+  return (
+    <div className="max-w-full overflow-x-hidden bg-ink font-mono">
+      <Nav />
+      <Hero />
+      <TurnaroundSection />
+      <WorkSection />
+      <ProofSection />
+      <ProcessSection />
+      <BuildLogSection />
+      <GeneratorSection />
+      <ServicesSection />
+      <ContactSection />
+      <Footer />
+    </div>
+  );
+}
