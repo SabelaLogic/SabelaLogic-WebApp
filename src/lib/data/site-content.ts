@@ -259,6 +259,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "AWM Leadership Companion", href: "https://awm-leadership-companion.web.app" },
       { label: "AutoShow Dealer OS", href: "https://autoshowbloemfontein.co.za" },
+      { label: "SabelaLogicAI", href: "/sabelalogicai.html" },
     ],
   },
   {
@@ -269,6 +270,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Process", href: "#process" },
       { label: "Architecture generator", href: "#generator" },
       { label: "Blog", href: "/blog" },
+      { label: "Start a build", href: "/start-a-build" },
       { label: "Contact", href: "#contact" },
     ],
   },

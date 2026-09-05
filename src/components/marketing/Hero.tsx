@@ -184,7 +184,7 @@ export function Hero() {
           </p>
           <div className="mb-14 flex flex-wrap gap-3">
             <a
-              href="#contact"
+              href="/start-a-build"
               className="sl-ping sl-cta-primary flex items-center gap-[10px] rounded-[2px] bg-signal px-6 py-3.5 text-[13px] font-bold tracking-[0.06em] text-ink"
               style={{ boxShadow: "rgba(224,74,58,0.26) 0 1px 3px 0, rgba(0,0,0,0.5) 0 4px 8px 3px" }}
             >

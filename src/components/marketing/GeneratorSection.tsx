@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { KINDS } from "@/lib/data/site-content";
 
-export function GeneratorSection() {
+export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { eyebrow?: string }) {
   const [brief, setBrief] = useState("");
   const [kind, setKind] = useState("Web app MVP");
   const [busy, setBusy] = useState(false);
@@ -50,7 +50,7 @@ export function GeneratorSection() {
   return (
     <section id="generator" className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
       <div className="mx-auto max-w-[1000px]">
-        <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">05 / ARCHITECTURE GENERATOR</div>
+        <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">{eyebrow}</div>
         <h2 className="mb-4 font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
           Describe it. Get the build plan.
         </h2>

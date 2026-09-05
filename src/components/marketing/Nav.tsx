@@ -38,7 +38,7 @@ export function Nav() {
           SIGN IN
         </Link>
         <a
-          href="#contact"
+          href="/start-a-build"
           className="sl-btn-outline flex items-center gap-[7px] rounded-[2px] border border-signal px-3.5 py-1.5 text-signal"
         >
           START A BUILD

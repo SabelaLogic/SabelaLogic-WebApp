@@ -20,7 +20,7 @@ const INITIAL_FORM: FormState = {
   brief: "",
 };
 
-export function ContactSection() {
+export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string }) {
   const [form, setForm] = useState<FormState>(INITIAL_FORM);
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
@@ -99,7 +99,7 @@ export function ContactSection() {
     <section id="contact" className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
       <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[clamp(28px,5vw,64px)]">
         <div>
-          <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">07 / CONTACT</div>
+          <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">{eyebrow}</div>
           <h2 className="mb-5 font-display text-[clamp(28px,4.4vw,50px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
             Let&rsquo;s scope it.
           </h2>
