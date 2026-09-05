@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: "#proof", label: "PROOF" },
   { href: "#process", label: "PROCESS" },
   { href: "#services", label: "SERVICES" },
+  { href: "/blog", label: "BLOG" },
 ];
 
 export function Nav() {
