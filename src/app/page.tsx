@@ -1,5 +1,6 @@
 import { Nav } from "@/components/marketing/Nav";
 import { Hero } from "@/components/marketing/Hero";
+import { BrandShowcase } from "@/components/marketing/BrandShowcase";
 import { TurnaroundSection } from "@/components/marketing/TurnaroundSection";
 import { WorkSection } from "@/components/marketing/WorkSection";
 import { ProofSection } from "@/components/marketing/ProofSection";
@@ -15,6 +16,7 @@ export default function Home() {
     <div className="max-w-full overflow-x-hidden bg-ink font-mono">
       <Nav />
       <Hero />
+      <BrandShowcase />
       <TurnaroundSection />
       <WorkSection />
       <ProofSection />
