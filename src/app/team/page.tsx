@@ -55,12 +55,14 @@ export default function TeamPage() {
                         {person.bio}
                       </p>
                     </div>
-                    <a
-                      href={`mailto:${person.email}`}
-                      className="mt-auto text-[12px] text-grey hover:text-signal"
-                    >
-                      {person.email} ↗
-                    </a>
+                    {person.email && (
+                      <a
+                        href={`mailto:${person.email}`}
+                        className="mt-auto text-[12px] text-grey hover:text-signal"
+                      >
+                        {person.email} ↗
+                      </a>
+                    )}
                   </div>
                 ))}
               </div>
