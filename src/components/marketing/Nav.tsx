@@ -5,11 +5,11 @@ import Link from "next/link";
 import { useState } from "react";
 
 const NAV_LINKS = [
-  { href: "#work", label: "WORK" },
-  { href: "#proof", label: "PROOF" },
-  { href: "#process", label: "PROCESS" },
-  { href: "#services", label: "SERVICES" },
-  { href: "#contact", label: "CONTACT" },
+  { href: "/#work", label: "WORK" },
+  { href: "/#proof", label: "PROOF" },
+  { href: "/#process", label: "PROCESS" },
+  { href: "/#services", label: "SERVICES" },
+  { href: "/#contact", label: "CONTACT" },
   { href: "/blog", label: "BLOG" },
   { href: "/workshop", label: "WORKSHOP" },
   { href: "/team", label: "TEAM" },
@@ -22,7 +22,7 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 bg-ink/86 backdrop-blur-[14px]">
       <div className="flex h-[58px] items-center justify-between gap-6 border-b border-hairline px-[clamp(16px,4vw,48px)]">
-        <Link href="#top" className="flex items-center gap-[11px] text-bone" onClick={() => setOpen(false)}>
+        <Link href="/" className="flex items-center gap-[11px] text-bone" onClick={() => setOpen(false)}>
           <Image
             src="/brand/monogram.png"
             alt="Sabela Logic"

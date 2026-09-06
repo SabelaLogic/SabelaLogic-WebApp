@@ -283,15 +283,15 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
   {
     head: "SITE",
     links: [
-      { label: "Work", href: "#work" },
-      { label: "Case study", href: "#proof" },
-      { label: "Process", href: "#process" },
-      { label: "Architecture generator", href: "#generator" },
+      { label: "Work", href: "/#work" },
+      { label: "Case study", href: "/#proof" },
+      { label: "Process", href: "/#process" },
+      { label: "Architecture generator", href: "/#generator" },
       { label: "Blog", href: "/blog" },
       { label: "Workshop tools", href: "/workshop" },
       { label: "Team", href: "/team" },
       { label: "Start a build", href: "/start-a-build" },
-      { label: "Contact", href: "#contact" },
+      { label: "Contact", href: "/#contact" },
     ],
   },
 ];
