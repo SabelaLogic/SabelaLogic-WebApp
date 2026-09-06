@@ -288,6 +288,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Process", href: "#process" },
       { label: "Architecture generator", href: "#generator" },
       { label: "Blog", href: "/blog" },
+      { label: "Workshop tools", href: "/workshop" },
       { label: "Start a build", href: "/start-a-build" },
       { label: "Contact", href: "#contact" },
     ],
