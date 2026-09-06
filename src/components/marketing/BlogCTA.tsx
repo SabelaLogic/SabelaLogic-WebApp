@@ -1,12 +1,16 @@
 import Link from "next/link";
 import { SLA } from "@/lib/data/site-content";
 import { AccentText } from "./AccentText";
+import { LiveDot } from "./LiveDot";
 
 export function BlogCTA() {
   return (
     <div className="mb-14 grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] items-center gap-[clamp(24px,4vw,48px)] border border-hairline bg-ink-raised p-[clamp(24px,3.6vw,40px)]">
       <div>
-        <div className="mb-2.5 text-[11px] tracking-[0.22em] text-signal">GOT A BUILD IN MIND?</div>
+        <div className="mb-2.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+          <LiveDot />
+          GOT A BUILD IN MIND?
+        </div>
         <h2 className="mb-3 font-display text-[clamp(22px,2.8vw,30px)] font-extrabold leading-[1.12] tracking-[-0.02em]">
           <AccentText text="Describe it, get a plan back today." />
         </h2>

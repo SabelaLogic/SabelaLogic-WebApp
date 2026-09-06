@@ -1,12 +1,16 @@
 import { CASES, ENGINEERING, FLOW, HARDENING, RR_SCREENS } from "@/lib/data/site-content";
 import { Carousel } from "./Carousel";
 import { AccentText } from "./AccentText";
+import { LiveDot } from "./LiveDot";
 
 export function ProofSection() {
   return (
     <section id="proof" className="border-b border-hairline bg-ink-raised px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
       <div className="mx-auto max-w-[1180px]">
-        <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">02 / CASE STUDIES</div>
+        <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+          <LiveDot />
+          02 / CASE STUDIES
+        </div>
         <h2 className="mb-[18px] max-w-[22ch] font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
           <AccentText text="Three builds, with the reasoning left in." />
         </h2>

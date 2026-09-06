@@ -4,6 +4,7 @@ import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import type { WorkshopTool } from "@/lib/data/workshop-tools";
 import { AccentText } from "@/components/marketing/AccentText";
+import { LiveDot } from "@/components/marketing/LiveDot";
 
 export function WorkshopToolShell({ tool, children }: { tool: WorkshopTool; children: ReactNode }) {
   return (
@@ -18,7 +19,8 @@ export function WorkshopToolShell({ tool, children }: { tool: WorkshopTool; chil
             >
               ← ALL WORKSHOP TOOLS
             </Link>
-            <div className="mb-3.5 flex items-center gap-3 text-[11px] tracking-[0.22em] text-signal">
+            <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+              <LiveDot />
               <span>{tool.tag}</span>
               <span className="text-grey-darker">·</span>
               <span className="text-grey">FREE — RUNS IN YOUR BROWSER</span>

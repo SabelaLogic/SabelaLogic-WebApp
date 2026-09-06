@@ -4,6 +4,7 @@ import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import { WORKSHOP_TOOLS } from "@/lib/data/workshop-tools";
 import { AccentText } from "@/components/marketing/AccentText";
+import { LiveDot } from "@/components/marketing/LiveDot";
 
 export const metadata: Metadata = {
   title: "Workshop Tools — Sabela Logic",
@@ -17,7 +18,10 @@ export default function WorkshopIndex() {
       <main id="main-content">
         <section className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
           <div className="mx-auto max-w-[1180px]">
-            <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">WORKSHOP</div>
+            <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+              <LiveDot />
+              WORKSHOP
+            </div>
             <h1 className="mb-5 max-w-[22ch] font-display text-[clamp(30px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.025em]">
               <AccentText text="Free tools. No signup. Nothing uploaded." />
             </h1>

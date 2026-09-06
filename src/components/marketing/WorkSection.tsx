@@ -6,6 +6,7 @@ import { useMemo, useState } from "react";
 import { FILTERS, PROJECTS, TONE } from "@/lib/data/projects";
 import type { ProjectStatus } from "@/lib/types";
 import { AccentText } from "./AccentText";
+import { LiveDot } from "./LiveDot";
 
 function isExternal(href: string) {
   return href.startsWith("http");
@@ -30,7 +31,10 @@ export function WorkSection() {
       <div className="relative z-10 mx-auto max-w-[1180px]">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
           <div>
-            <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">01 / DEPLOYMENTS</div>
+            <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+              <LiveDot />
+              01 / DEPLOYMENTS
+            </div>
             <h2 className="m-0 font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
               <AccentText text="Everything I’ve built." />
             </h2>

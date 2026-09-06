@@ -1,5 +1,6 @@
 import { BUILD_LOG, TICKER_ITEMS } from "@/lib/data/site-content";
 import { AccentText } from "./AccentText";
+import { LiveDot } from "./LiveDot";
 
 export function BuildLogSection() {
   const items = [...TICKER_ITEMS, ...TICKER_ITEMS];
@@ -8,7 +9,10 @@ export function BuildLogSection() {
     <section id="build-log" className="border-b border-hairline bg-ink-raised px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
       <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[clamp(28px,5vw,64px)]">
         <div>
-          <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">04 / BUILD LOG</div>
+          <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+            <LiveDot />
+            04 / BUILD LOG
+          </div>
           <h2 className="mb-4 font-display text-[clamp(26px,3.6vw,42px)] leading-[1.06] font-extrabold tracking-[-0.025em]">
             <AccentText text="Cadence, not promises." />
           </h2>

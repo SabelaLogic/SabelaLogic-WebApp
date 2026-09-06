@@ -266,6 +266,18 @@ textarea::placeholder {
   flex-shrink: 0;
   animation: sl-arm 2.4s cubic-bezier(.4, 0, .2, 1) infinite;
 }
+
+/* Small live-dot used next to section eyebrows/kickers sitewide, so the
+   page reads as watched rather than static — same pulse as the sign-in dot. */
+.sl-live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-signal);
+  flex-shrink: 0;
+  animation: sl-arm 2.4s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+
 .sl-signin::before {
   content: "";
   position: absolute;

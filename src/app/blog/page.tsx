@@ -6,6 +6,7 @@ import { NewsletterSection } from "@/components/marketing/NewsletterSection";
 import { BlogCTA } from "@/components/marketing/BlogCTA";
 import { BLOG_POSTS } from "@/lib/data/blog-content";
 import { AccentText } from "@/components/marketing/AccentText";
+import { LiveDot } from "@/components/marketing/LiveDot";
 
 export const metadata: Metadata = {
   title: "Blog — Sabela Logic",
@@ -19,7 +20,10 @@ export default function BlogIndex() {
       <main id="main-content">
         <section className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
           <div className="mx-auto max-w-[1180px]">
-            <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">BLOG</div>
+            <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+              <LiveDot />
+              BLOG
+            </div>
             <h1 className="mb-5 max-w-[24ch] font-display text-[clamp(30px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.025em]">
               <AccentText text="Systems, use cases, and what they actually cost." />
             </h1>

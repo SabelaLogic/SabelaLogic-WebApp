@@ -1,5 +1,6 @@
 import { SERVICES } from "@/lib/data/site-content";
 import { AccentText } from "./AccentText";
+import { LiveDot } from "./LiveDot";
 
 const SHOW_PRICING = true;
 
@@ -7,7 +8,10 @@ export function ServicesSection() {
   return (
     <section id="services" className="border-b border-hairline bg-ink-raised px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
       <div className="mx-auto max-w-[1180px]">
-        <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">06 / SERVICES</div>
+        <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+          <LiveDot />
+          06 / SERVICES
+        </div>
         <h2 className="mb-11 font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
           <AccentText text="What you can hire me for." />
         </h2>

@@ -5,6 +5,7 @@ import { Footer } from "@/components/marketing/Footer";
 import { CONTRIBUTORS } from "@/lib/data/contributors";
 import { CONTACT } from "@/lib/data/site-content";
 import { AccentText } from "@/components/marketing/AccentText";
+import { LiveDot } from "@/components/marketing/LiveDot";
 
 export const metadata: Metadata = {
   title: "Team — Sabela Logic",
@@ -18,7 +19,10 @@ export default function TeamPage() {
       <main id="main-content">
         <section className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
           <div className="mx-auto max-w-[1180px]">
-            <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">TEAM</div>
+            <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+              <LiveDot />
+              TEAM
+            </div>
             <h1 className="mb-5 max-w-[26ch] font-display text-[clamp(30px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.025em]">
               <AccentText text="One operator. Specialists brought in per build." />
             </h1>

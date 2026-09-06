@@ -6,6 +6,7 @@ import { Footer } from "@/components/marketing/Footer";
 import { NewsletterSection } from "@/components/marketing/NewsletterSection";
 import { BLOG_POSTS, getBlogPost } from "@/lib/data/blog-content";
 import { AccentText } from "@/components/marketing/AccentText";
+import { LiveDot } from "@/components/marketing/LiveDot";
 
 type Params = Promise<{ slug: string }>;
 
@@ -39,7 +40,8 @@ export default async function BlogPostPage({ params }: { params: Params }) {
             >
               ← ALL ARTICLES
             </Link>
-            <div className="mb-3.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] tracking-[0.16em] text-grey-darker">
+            <div className="mb-3.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[10px] tracking-[0.16em] text-grey-darker">
+              <LiveDot />
               <span className="text-signal">{post.tag}</span>
               <span>·</span>
               <span>{post.date}</span>

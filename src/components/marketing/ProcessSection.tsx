@@ -1,11 +1,15 @@
 import { PHASES } from "@/lib/data/site-content";
 import { AccentText } from "./AccentText";
+import { LiveDot } from "./LiveDot";
 
 export function ProcessSection() {
   return (
     <section id="process" className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
       <div className="mx-auto max-w-[1180px]">
-        <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">03 / PROCESS</div>
+        <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+          <LiveDot />
+          03 / PROCESS
+        </div>
         <h2 className="mb-[18px] font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
           <AccentText text="Ten days, accounted for." />
         </h2>

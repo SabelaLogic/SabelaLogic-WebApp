@@ -4,6 +4,7 @@ import { useState } from "react";
 import { isValidEmail, MAX_LENGTHS } from "@/lib/validation";
 import { CONTACT } from "@/lib/data/site-content";
 import { AccentText } from "./AccentText";
+import { LiveDot } from "./LiveDot";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -47,7 +48,10 @@ export function NewsletterSection() {
 
   return (
     <div className="border border-hairline bg-ink-raised p-[clamp(20px,3vw,32px)]">
-      <div className="mb-2 text-[11px] tracking-[0.22em] text-signal">THE WEEKLY BRIEF</div>
+      <div className="mb-2 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+        <LiveDot />
+        THE WEEKLY BRIEF
+      </div>
       <h3 className="mb-3 font-display text-[clamp(20px,2.6vw,28px)] font-extrabold leading-[1.1] tracking-[-0.02em]">
         <AccentText text="Practical builds and business tech, once a week." />
       </h3>

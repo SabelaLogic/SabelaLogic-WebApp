@@ -6,6 +6,7 @@ import { CONTACT, NEED_OPTIONS, WHEN_OPTIONS } from "@/lib/data/site-content";
 import { MAX_LENGTHS } from "@/lib/validation";
 import { Spinner } from "./Spinner";
 import { AccentText } from "./AccentText";
+import { LiveDot } from "./LiveDot";
 
 interface FormState {
   name: string;
@@ -102,7 +103,10 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
     <section id="contact" className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
       <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[clamp(28px,5vw,64px)]">
         <div>
-          <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">{eyebrow}</div>
+          <div className="mb-3.5 flex items-center gap-2 text-[11px] tracking-[0.22em] text-signal">
+            <LiveDot />
+            {eyebrow}
+          </div>
           <h2 className="mb-5 font-display text-[clamp(28px,4.4vw,50px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
             <AccentText text="Let’s scope it." />
           </h2>
