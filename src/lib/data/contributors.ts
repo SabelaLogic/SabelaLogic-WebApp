@@ -23,4 +23,11 @@ export const CONTRIBUTORS: Contributor[] = [
     image: "/team/grant-portrait.webp",
     bio: "Opens the doors the code can't — sourcing and shaping the partnerships and client relationships that turn a build into an ongoing account.",
   },
+  {
+    slug: "tebogo-mosiane",
+    name: "Tebogo Mosiane",
+    role: "Lead Account Solutions Architect",
+    image: "/team/tebogo-portrait.webp",
+    bio: "Owns the handover from signed brief to running system — the account-level architecture that keeps a build serving the business long after launch.",
+  },
 ];
