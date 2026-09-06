@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import { WORKSHOP_TOOLS } from "@/lib/data/workshop-tools";
+import { WorkshopIntroVideo } from "@/components/workshop/WorkshopIntroVideo";
 
 export const metadata: Metadata = {
   title: "Workshop Tools — Sabela Logic",
@@ -16,15 +17,20 @@ export default function WorkshopIndex() {
       <main id="main-content">
         <section className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
           <div className="mx-auto max-w-[1180px]">
-            <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">WORKSHOP</div>
-            <h1 className="mb-5 max-w-[22ch] font-display text-[clamp(30px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.025em]">
-              Free tools. No signup. Nothing uploaded.
-            </h1>
-            <p className="mb-14 max-w-[62ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
-              Small utilities built the same way everything else here is built — fast, honest about what they do,
-              and yours to use without an account. Most run entirely in your browser; nothing you paste or drop
-              in leaves your device.
-            </p>
+            <div className="mb-14 grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] items-center gap-[clamp(28px,4vw,56px)]">
+              <div>
+                <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">WORKSHOP</div>
+                <h1 className="mb-5 max-w-[22ch] font-display text-[clamp(30px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.025em]">
+                  Free tools. No signup. Nothing uploaded.
+                </h1>
+                <p className="m-0 max-w-[54ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
+                  Small utilities built the same way everything else here is built — fast, honest about what they
+                  do, and yours to use without an account. Most run entirely in your browser; nothing you paste
+                  or drop in leaves your device.
+                </p>
+              </div>
+              <WorkshopIntroVideo />
+            </div>
 
             <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-px border border-hairline bg-hairline">
               {WORKSHOP_TOOLS.map((tool) => (
