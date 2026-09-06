@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { DEFAULT_STAGES, DEFAULT_WORKSTREAMS, RAIL, STAGE_KEYS, STAGE_LABELS } from "@/lib/data/visualizer-defaults";
@@ -206,13 +207,19 @@ export function JourneyVisualizer({
       <header className="sticky top-0 z-40 border-b border-[#16181c] bg-[#07080a]/82 backdrop-blur-[14px]">
         <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-6 px-10 py-[18px]">
           <div className="flex items-center gap-4">
-            <div
-              className="h-[9px] w-[9px] rounded-full"
-              style={{ background: "var(--a)", boxShadow: "0 0 12px var(--a-line)" }}
-            />
-            <div className="font-mono text-[11px] tracking-[0.22em] text-[#6b7076]">
-              SABELALOGIC · BUILD TRACKER
-            </div>
+            <Link
+              href="/"
+              className="flex items-center gap-4 transition-opacity hover:opacity-75"
+              aria-label="Sabela Logic home"
+            >
+              <div
+                className="h-[9px] w-[9px] rounded-full"
+                style={{ background: "var(--a)", boxShadow: "0 0 12px var(--a-line)" }}
+              />
+              <div className="font-mono text-[11px] tracking-[0.22em] text-[#6b7076]">
+                SABELALOGIC · BUILD TRACKER
+              </div>
+            </Link>
             <div data-rail-mini className="ml-1.5 items-center gap-3.5">
               <span className="flex gap-1">
                 {rail.map((m, i) => (
