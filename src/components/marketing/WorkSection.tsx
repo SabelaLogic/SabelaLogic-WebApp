@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { FILTERS, PROJECTS, TONE } from "@/lib/data/projects";
 import type { ProjectStatus } from "@/lib/types";
+import { AccentText } from "./AccentText";
 
 function isExternal(href: string) {
   return href.startsWith("http");
@@ -31,7 +32,7 @@ export function WorkSection() {
           <div>
             <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">01 / DEPLOYMENTS</div>
             <h2 className="m-0 font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
-              Everything I&rsquo;ve built.
+              <AccentText text="Everything I’ve built." />
             </h2>
           </div>
           <p className="m-0 max-w-[38ch] text-[13px] leading-[1.7] text-grey">

@@ -541,6 +541,24 @@ textarea::placeholder {
   animation: sl-ai-pulse 2s ease-in-out infinite;
 }
 
+/* ---------- Accent letter — one red, animated letter per white heading ----------
+   Slow (3.2s) opacity/glow breathe, well under the WCAG flash-hazard threshold of
+   3 flashes/second — a glow, not a strobe. Respects prefers-reduced-motion globally. */
+@keyframes sl-accent-pulse {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 6px rgba(224, 74, 58, 0.35), 0 0 16px rgba(224, 74, 58, 0.2);
+  }
+  50% {
+    opacity: 0.86;
+    text-shadow: 0 0 18px rgba(224, 74, 58, 0.85), 0 0 36px rgba(224, 74, 58, 0.5);
+  }
+}
+.sl-accent-letter {
+  color: var(--color-signal);
+  animation: sl-accent-pulse 3.2s ease-in-out infinite;
+}
+
 /* ---------- On-brand spinner ---------- */
 @keyframes sl-spin {
   to { transform: rotate(360deg); }

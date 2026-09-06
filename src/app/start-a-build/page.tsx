@@ -3,6 +3,7 @@ import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import { GeneratorSection } from "@/components/marketing/GeneratorSection";
 import { ContactSection } from "@/components/marketing/ContactSection";
+import { AccentText } from "@/components/marketing/AccentText";
 
 export const metadata: Metadata = {
   title: "Start a Build — Sabela Logic",
@@ -19,7 +20,7 @@ export default function StartABuildPage() {
           <div className="mx-auto max-w-[1000px]">
             <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">START A BUILD</div>
             <h1 className="mb-5 max-w-[24ch] font-display text-[clamp(30px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.025em]">
-              Two steps. Leave with a plan and a quote in motion.
+              <AccentText text="Two steps. Leave with a plan and a quote in motion." />
             </h1>
             <p className="max-w-[62ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
               Describe it below and get an instant architecture plan — stack, data model, risky parts, schedule.

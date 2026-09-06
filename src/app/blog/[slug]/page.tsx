@@ -5,6 +5,7 @@ import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import { NewsletterSection } from "@/components/marketing/NewsletterSection";
 import { BLOG_POSTS, getBlogPost } from "@/lib/data/blog-content";
+import { AccentText } from "@/components/marketing/AccentText";
 
 type Params = Promise<{ slug: string }>;
 
@@ -46,7 +47,7 @@ export default async function BlogPostPage({ params }: { params: Params }) {
               <span>{post.readTime}</span>
             </div>
             <h1 className="mb-8 font-display text-[clamp(28px,4.4vw,44px)] font-extrabold leading-[1.1] tracking-[-0.025em]">
-              {post.title}
+              <AccentText text={post.title} />
             </h1>
             <div className="flex flex-col gap-5">
               {post.body.map((para, i) => (

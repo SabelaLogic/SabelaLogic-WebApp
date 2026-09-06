@@ -5,6 +5,7 @@ import { Footer } from "@/components/marketing/Footer";
 import { NewsletterSection } from "@/components/marketing/NewsletterSection";
 import { BlogCTA } from "@/components/marketing/BlogCTA";
 import { BLOG_POSTS } from "@/lib/data/blog-content";
+import { AccentText } from "@/components/marketing/AccentText";
 
 export const metadata: Metadata = {
   title: "Blog — Sabela Logic",
@@ -20,7 +21,7 @@ export default function BlogIndex() {
           <div className="mx-auto max-w-[1180px]">
             <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">BLOG</div>
             <h1 className="mb-5 max-w-[24ch] font-display text-[clamp(30px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.025em]">
-              Systems, use cases, and what they actually cost.
+              <AccentText text="Systems, use cases, and what they actually cost." />
             </h1>
             <p className="mb-12 max-w-[62ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
               Short, specific reads on where software and automation pay off for South African businesses — plus
@@ -45,7 +46,7 @@ export default function BlogIndex() {
                     <span>{post.readTime}</span>
                   </div>
                   <h2 className="m-0 font-display text-[19px] font-semibold leading-[1.24] tracking-[-0.01em]">
-                    {post.title}
+                    <AccentText text={post.title} />
                   </h2>
                   <p className="m-0 flex-1 text-[12.5px] leading-[1.7] text-bone-dim" style={{ textWrap: "pretty" }}>
                     {post.excerpt}

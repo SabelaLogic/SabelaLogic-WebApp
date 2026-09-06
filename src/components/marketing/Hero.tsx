@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { HERO_STATS } from "@/lib/data/site-content";
+import { AccentText } from "./AccentText";
 
 const HERO_IMAGES = [
   "/hero/dragon.webp",
@@ -190,7 +191,7 @@ export function Hero() {
             PRETORIA, SOUTH AFRICA — AVAILABLE FOR WORK
           </div>
           <h1 className="mb-6 max-w-[16ch] font-display text-[clamp(38px,7.2vw,88px)] leading-[0.98] font-extrabold tracking-[-0.03em]" style={{ textWrap: "balance" }}>
-            Beautiful is the <span className="text-grey">easy</span> half.
+            <AccentText text="Beautiful is the" /> <span className="text-grey">easy</span> half.
           </h1>
           <p className="mb-10 max-w-[56ch] text-[clamp(14px,1.45vw,17px)] leading-[1.68] text-bone-dim" style={{ textWrap: "pretty" }}>
             I build software that carries real weight — payments that clear, one-time PINs that arrive,

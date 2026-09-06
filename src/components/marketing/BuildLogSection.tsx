@@ -1,4 +1,5 @@
 import { BUILD_LOG, TICKER_ITEMS } from "@/lib/data/site-content";
+import { AccentText } from "./AccentText";
 
 export function BuildLogSection() {
   const items = [...TICKER_ITEMS, ...TICKER_ITEMS];
@@ -9,7 +10,7 @@ export function BuildLogSection() {
         <div>
           <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">04 / BUILD LOG</div>
           <h2 className="mb-4 font-display text-[clamp(26px,3.6vw,42px)] leading-[1.06] font-extrabold tracking-[-0.025em]">
-            Cadence, not promises.
+            <AccentText text="Cadence, not promises." />
           </h2>
           <p className="mb-[34px] max-w-[40ch] text-[13px] leading-[1.75] text-grey">
             Recent commits across the estate. Dated where the repository records a date.

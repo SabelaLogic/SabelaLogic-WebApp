@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
+import { AccentText } from "./AccentText";
 
 const BrandCanvas = dynamic(() => import("./BrandScene").then((m) => m.BrandCanvas), {
   ssr: false,
@@ -57,7 +58,7 @@ export function BrandShowcase() {
         <div className="pointer-events-none relative mx-auto flex h-full max-w-[1180px] flex-col justify-center px-[clamp(16px,4vw,48px)]">
           <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">IN THREE DIMENSIONS</div>
           <h2 className="max-w-[18ch] font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
-            Built from parts, scroll by scroll.
+            <AccentText text="Built from parts, scroll by scroll." />
           </h2>
         </div>
       </div>

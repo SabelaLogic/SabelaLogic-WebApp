@@ -1,5 +1,6 @@
 import { CASES, ENGINEERING, FLOW, HARDENING, RR_SCREENS } from "@/lib/data/site-content";
 import { Carousel } from "./Carousel";
+import { AccentText } from "./AccentText";
 
 export function ProofSection() {
   return (
@@ -7,7 +8,7 @@ export function ProofSection() {
       <div className="mx-auto max-w-[1180px]">
         <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">02 / CASE STUDIES</div>
         <h2 className="mb-[18px] max-w-[22ch] font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
-          Three builds, with the reasoning left in.
+          <AccentText text="Three builds, with the reasoning left in." />
         </h2>
         <p className="mb-12 max-w-[62ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
           Problem, decision, result. No invented metrics — every claim below is a live URL, a structural
@@ -27,7 +28,7 @@ export function ProofSection() {
                 </span>
               </div>
               <h3 className="mb-[22px] font-display text-[clamp(22px,2.9vw,34px)] leading-[1.14] font-semibold tracking-[-0.02em]">
-                {c.name}
+                <AccentText text={c.name} />
               </h3>
               <div className="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-[clamp(18px,2.6vw,32px)]">
                 <div className="flex flex-col gap-2.5">

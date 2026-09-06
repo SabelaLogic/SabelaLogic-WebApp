@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import type { WorkshopTool } from "@/lib/data/workshop-tools";
+import { AccentText } from "@/components/marketing/AccentText";
 
 export function WorkshopToolShell({ tool, children }: { tool: WorkshopTool; children: ReactNode }) {
   return (
@@ -23,7 +24,7 @@ export function WorkshopToolShell({ tool, children }: { tool: WorkshopTool; chil
               <span className="text-grey">FREE — RUNS IN YOUR BROWSER</span>
             </div>
             <h1 className="mb-4 font-display text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.06] tracking-[-0.025em]">
-              {tool.name}
+              <AccentText text={tool.name} />
             </h1>
             <p className="mb-10 max-w-[60ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
               {tool.description}

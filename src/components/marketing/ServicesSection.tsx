@@ -1,4 +1,5 @@
 import { SERVICES } from "@/lib/data/site-content";
+import { AccentText } from "./AccentText";
 
 const SHOW_PRICING = true;
 
@@ -8,7 +9,7 @@ export function ServicesSection() {
       <div className="mx-auto max-w-[1180px]">
         <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">06 / SERVICES</div>
         <h2 className="mb-11 font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
-          What you can hire me for.
+          <AccentText text="What you can hire me for." />
         </h2>
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4">
           {SERVICES.map((sv) => (

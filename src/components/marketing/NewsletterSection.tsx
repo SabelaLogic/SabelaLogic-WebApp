@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { isValidEmail, MAX_LENGTHS } from "@/lib/validation";
 import { CONTACT } from "@/lib/data/site-content";
+import { AccentText } from "./AccentText";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -48,7 +49,7 @@ export function NewsletterSection() {
     <div className="border border-hairline bg-ink-raised p-[clamp(20px,3vw,32px)]">
       <div className="mb-2 text-[11px] tracking-[0.22em] text-signal">THE WEEKLY BRIEF</div>
       <h3 className="mb-3 font-display text-[clamp(20px,2.6vw,28px)] font-extrabold leading-[1.1] tracking-[-0.02em]">
-        Practical builds and business tech, once a week.
+        <AccentText text="Practical builds and business tech, once a week." />
       </h3>
       <p className="mb-6 max-w-[52ch] text-[13px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
         No sales pitch every issue — real use cases, what they cost, and what they actually replace. Unsubscribe

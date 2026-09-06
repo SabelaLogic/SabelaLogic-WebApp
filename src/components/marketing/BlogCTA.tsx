@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SLA } from "@/lib/data/site-content";
+import { AccentText } from "./AccentText";
 
 export function BlogCTA() {
   return (
@@ -7,7 +8,7 @@ export function BlogCTA() {
       <div>
         <div className="mb-2.5 text-[11px] tracking-[0.22em] text-signal">GOT A BUILD IN MIND?</div>
         <h2 className="mb-3 font-display text-[clamp(22px,2.8vw,30px)] font-extrabold leading-[1.12] tracking-[-0.02em]">
-          Describe it, get a plan back today.
+          <AccentText text="Describe it, get a plan back today." />
         </h2>
         <p className="mb-6 max-w-[46ch] text-[13.5px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
           The architecture generator turns a few sentences into a real build brief — stack, data model, schedule.

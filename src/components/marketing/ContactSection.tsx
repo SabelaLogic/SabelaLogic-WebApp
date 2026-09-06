@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { CONTACT, NEED_OPTIONS, WHEN_OPTIONS } from "@/lib/data/site-content";
 import { MAX_LENGTHS } from "@/lib/validation";
 import { Spinner } from "./Spinner";
+import { AccentText } from "./AccentText";
 
 interface FormState {
   name: string;
@@ -103,7 +104,7 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
         <div>
           <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">{eyebrow}</div>
           <h2 className="mb-5 font-display text-[clamp(28px,4.4vw,50px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
-            Let&rsquo;s scope it.
+            <AccentText text="Let’s scope it." />
           </h2>
           <p className="mb-[30px] max-w-[40ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
             Send the brief and you&rsquo;ll have a fixed quote and a delivery date back within 24 hours. If

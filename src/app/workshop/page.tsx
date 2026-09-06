@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import { WORKSHOP_TOOLS } from "@/lib/data/workshop-tools";
+import { AccentText } from "@/components/marketing/AccentText";
 
 export const metadata: Metadata = {
   title: "Workshop Tools — Sabela Logic",
@@ -18,7 +19,7 @@ export default function WorkshopIndex() {
           <div className="mx-auto max-w-[1180px]">
             <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">WORKSHOP</div>
             <h1 className="mb-5 max-w-[22ch] font-display text-[clamp(30px,4.8vw,56px)] font-extrabold leading-[1.04] tracking-[-0.025em]">
-              Free tools. No signup. Nothing uploaded.
+              <AccentText text="Free tools. No signup. Nothing uploaded." />
             </h1>
             <p className="mb-14 max-w-[62ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
               Small utilities built the same way everything else here is built — fast, honest about what they do,
@@ -37,7 +38,7 @@ export default function WorkshopIndex() {
                     <span className="text-signal">{tool.tag}</span>
                   </div>
                   <h2 className="m-0 font-display text-[19px] font-semibold leading-[1.24] tracking-[-0.01em]">
-                    {tool.name}
+                    <AccentText text={tool.name} />
                   </h2>
                   <p className="m-0 flex-1 text-[12.5px] leading-[1.7] text-bone-dim" style={{ textWrap: "pretty" }}>
                     {tool.description}

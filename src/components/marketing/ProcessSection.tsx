@@ -1,4 +1,5 @@
 import { PHASES } from "@/lib/data/site-content";
+import { AccentText } from "./AccentText";
 
 export function ProcessSection() {
   return (
@@ -6,7 +7,7 @@ export function ProcessSection() {
       <div className="mx-auto max-w-[1180px]">
         <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">03 / PROCESS</div>
         <h2 className="mb-[18px] font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
-          Ten days, accounted for.
+          <AccentText text="Ten days, accounted for." />
         </h2>
         <p className="mb-11 max-w-[58ch] text-[14px] leading-[1.75] text-bone-dim">
           This is the actual shape of a web app MVP. Deploys go live on day two — you watch it get built

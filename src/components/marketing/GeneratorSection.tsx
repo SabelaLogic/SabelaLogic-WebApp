@@ -4,6 +4,7 @@ import { useState } from "react";
 import { KINDS } from "@/lib/data/site-content";
 import { MAX_LENGTHS } from "@/lib/validation";
 import { Spinner } from "./Spinner";
+import { AccentText } from "./AccentText";
 
 export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { eyebrow?: string }) {
   const [brief, setBrief] = useState("");
@@ -54,7 +55,7 @@ export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { 
       <div className="mx-auto max-w-[1000px]">
         <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">{eyebrow}</div>
         <h2 className="mb-4 font-display text-[clamp(28px,4.4vw,52px)] leading-[1.04] font-extrabold tracking-[-0.025em]">
-          Describe it. Get the build plan.
+          <AccentText text="Describe it. Get the build plan." />
         </h2>
         <p className="mb-[34px] max-w-[58ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
           A real generator, not a demo reel. Tell it what you want built and it returns the stack, the data
