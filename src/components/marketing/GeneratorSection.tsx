@@ -30,7 +30,7 @@ export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { 
         body: JSON.stringify({ brief: trimmed, kind }),
       });
       if (!res.ok) throw new Error("bad status");
-      const data = await res.json();
+      const data = (await res.json()) as { text?: string };
       setOutput(String(data.text || "").trim());
     } catch {
       setError(

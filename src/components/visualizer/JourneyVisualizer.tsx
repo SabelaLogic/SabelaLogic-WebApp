@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { DEFAULT_STAGES, DEFAULT_WORKSTREAMS, RAIL, STAGE_KEYS, STAGE_LABELS } from "@/lib/data/visualizer-defaults";
@@ -45,6 +46,11 @@ export function JourneyVisualizer({
   stages: stagesProp,
   onNarration,
 }: JourneyVisualizerProps) {
+  const router = useRouter();
+  const signOut = async () => {
+    await fetch("/api/auth/logout", { method: "POST" }).catch(() => {});
+    router.push("/login");
+  };
   const current = Math.min(Math.max(Number(currentStage) || 3, 1), 5);
   const ws = wsProp && wsProp.length ? wsProp : DEFAULT_WORKSTREAMS;
   const stageData = stagesProp && stagesProp.length === 5 ? stagesProp : DEFAULT_STAGES;
@@ -243,6 +249,13 @@ export function JourneyVisualizer({
             <div className="rounded-[3px] border border-[#1d2024] px-2.5 py-1.5 font-mono text-[10px] tracking-[0.14em] text-[#4e5358]">
               {reference}
             </div>
+            <button
+              type="button"
+              onClick={signOut}
+              className="font-mono text-[10px] tracking-[0.14em] text-[#6b7076] transition-colors hover:text-[#e8eaed]"
+            >
+              SIGN OUT
+            </button>
           </div>
         </div>
       </header>

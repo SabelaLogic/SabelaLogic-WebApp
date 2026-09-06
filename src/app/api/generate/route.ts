@@ -59,7 +59,7 @@ export async function POST(request: Request) {
       }),
     });
     if (!res.ok) throw new Error(`upstream ${res.status}`);
-    const data = await res.json();
+    const data = (await res.json()) as { content?: { text?: string }[] };
     const text = data?.content?.[0]?.text ?? "";
     return NextResponse.json({ text });
   } catch {

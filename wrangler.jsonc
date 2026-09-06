@@ -8,6 +8,13 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sabela_client_portal",
+      "database_id": "a8de53e2-3a49-4ee9-8b34-70663ff629fe"
+    }
+  ],
   "observability": {
     "enabled": true
   }

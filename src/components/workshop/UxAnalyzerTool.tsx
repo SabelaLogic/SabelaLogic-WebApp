@@ -52,7 +52,7 @@ export function UxAnalyzerTool() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
       });
-      const data = await res.json().catch(() => ({}));
+      const data = (await res.json().catch(() => ({}))) as ScanResult & { error?: string };
       if (!res.ok) throw new Error(data.error || "Could not scan that URL.");
       setResult(data);
     } catch (err) {

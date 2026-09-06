@@ -27,7 +27,7 @@ export function NewsletterSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, source: "sabelalogic.co.za/blog" }),
       });
-      const data = await res.json().catch(() => ({}));
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) throw new Error(data.error || "Could not subscribe.");
       setSending(false);
       setSentVia("webhook");

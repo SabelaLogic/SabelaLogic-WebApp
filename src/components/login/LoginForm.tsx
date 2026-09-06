@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { Spinner } from "@/components/marketing/Spinner";
 
@@ -12,6 +13,7 @@ const PERKS = [
 ];
 
 export function LoginForm() {
+  const router = useRouter();
   const [typed, setTyped] = useState(0);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -34,7 +36,7 @@ export function LoginForm() {
     };
   }, []);
 
-  const submit = (e: React.FormEvent) => {
+  const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim() || !password) {
       setError("Enter both your email and password to continue.");
@@ -42,11 +44,23 @@ export function LoginForm() {
     }
     setBusy(true);
     setError("");
-    // AUTH INTEGRATION POINT — wire to the portal's auth endpoint, then route to the journey visualizer.
-    setTimeout(() => {
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim(), password }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { accepted?: boolean; error?: string };
+      if (!res.ok) {
+        setBusy(false);
+        setError(data.error ?? "Invalid email or password.");
+        return;
+      }
+      router.push(data.accepted ? "/portal" : "/acceptance");
+    } catch {
       setBusy(false);
-      setError("Portal authentication is not connected yet — credentials are issued at onboarding.");
-    }, 900);
+      setError("Could not reach the portal right now — try again shortly.");
+    }
   };
 
   return (
