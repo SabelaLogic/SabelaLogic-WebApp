@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { href: "#services", label: "SERVICES" },
   { href: "#contact", label: "CONTACT" },
   { href: "/blog", label: "BLOG" },
+  { href: "/portal", label: "TRACK YOUR PROJECT" },
 ];
 
 export function Nav() {
@@ -50,6 +51,10 @@ export function Nav() {
             className="sl-btn-outline flex items-center gap-[7px] rounded-[2px] border border-signal px-3.5 py-1.5 text-signal"
           >
             START A BUILD
+          </a>
+          <a href="/sabelalogicai.html" className="sl-ai-btn">
+            <span className="sl-ai-dot" />
+            SABELALOGICAI
           </a>
         </nav>
 
@@ -106,6 +111,14 @@ export function Nav() {
           className="mt-3 flex items-center justify-center gap-[7px] rounded-[2px] border border-signal bg-signal px-3.5 py-3 font-bold text-ink"
         >
           START A BUILD
+        </a>
+        <a
+          href="/sabelalogicai.html"
+          onClick={() => setOpen(false)}
+          className="sl-ai-btn mt-3 justify-center py-3"
+        >
+          <span className="sl-ai-dot" />
+          SABELALOGICAI
         </a>
       </nav>
     </header>

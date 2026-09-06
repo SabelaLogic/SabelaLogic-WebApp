@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Newsreader, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { BackToTop } from "@/components/marketing/BackToTop";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -45,6 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Skip to content
         </a>
         {children}
+        <BackToTop />
       </body>
     </html>
   );

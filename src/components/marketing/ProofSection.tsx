@@ -1,4 +1,5 @@
-import { CASES, ENGINEERING, FLOW, HARDENING } from "@/lib/data/site-content";
+import { CASES, ENGINEERING, FLOW, HARDENING, RR_SCREENS } from "@/lib/data/site-content";
+import { Carousel } from "./Carousel";
 
 export function ProofSection() {
   return (
@@ -103,6 +104,13 @@ export function ProofSection() {
               </div>
             ))}
           </div>
+        </div>
+
+        <div className="mb-5 text-[10.5px] tracking-[0.18em] text-grey-darker">
+          SEE IT IN THE ROOM — REDEEMED &amp; RISING AWARDS
+        </div>
+        <div className="mb-10">
+          <Carousel slides={RR_SCREENS} />
         </div>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4">

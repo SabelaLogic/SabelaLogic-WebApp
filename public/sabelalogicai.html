@@ -219,6 +219,21 @@
   button.icon-btn:hover{ color: var(--text); border-color: var(--accent-dim); }
   button.icon-btn:focus-visible{ outline: 2px solid var(--accent); outline-offset:1px; }
   button.icon-btn svg{ width:16px; height:16px; }
+  a.icon-btn{
+    background: var(--panel-2);
+    border: 1px solid var(--hairline);
+    color: var(--text-dim);
+    width:34px; height:34px;
+    border-radius:8px;
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.4);
+    transition: color .15s ease, border-color .15s ease;
+    text-decoration:none;
+    flex-shrink:0;
+  }
+  a.icon-btn:hover{ color: var(--text); border-color: var(--accent-dim); }
+  a.icon-btn:focus-visible{ outline: 2px solid var(--accent); outline-offset:1px; }
+  a.icon-btn svg{ width:16px; height:16px; }
 
   /* ---------- Chat area ---------- */
   main{
@@ -683,19 +698,14 @@
 </head>
 <body>
 
-<video class="bg-video" id="bgVideo" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-  <source src="/media/sabelalogicai-bg.mp4" type="video/mp4">
-</video>
+<!-- Background video pending a replacement file — re-add the <video> element
+     (see git history) with the correct source once it's uploaded. -->
 <div class="bg-scrim" aria-hidden="true"></div>
 
-<script>
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var bgVideo = document.getElementById('bgVideo');
-    if (bgVideo) bgVideo.pause();
-  }
-</script>
-
 <header>
+  <a class="icon-btn" href="/" title="Back to sabelalogic.co.za" aria-label="Back to sabelalogic.co.za">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+  </a>
   <div class="brand">
     <div class="gauge" aria-hidden="true"><i class="hub"></i></div>
     <div>

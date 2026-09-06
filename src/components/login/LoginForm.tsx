@@ -129,6 +129,13 @@ export function LoginForm() {
           No portal access yet? <Link href="/#contact">Start a build</Link> and we&rsquo;ll issue credentials at
           onboarding.
         </div>
+        <Link
+          href="/start-a-build"
+          className="sl-cta-primary sl-ping mt-4 flex w-full items-center justify-center gap-[10px] rounded-[2px] bg-signal px-6 py-3.5 text-[13px] font-bold tracking-[0.06em] text-ink"
+          style={{ boxShadow: "rgba(224,74,58,0.26) 0 1px 3px 0, rgba(0,0,0,0.5) 0 4px 8px 3px" }}
+        >
+          START A BUILD →
+        </Link>
       </div>
     </div>
   );

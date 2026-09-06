@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { isValidEmail, MAX_LENGTHS } from "@/lib/validation";
+import { CONTACT } from "@/lib/data/site-content";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [sentVia, setSentVia] = useState<"webhook" | "email">("webhook");
   const [error, setError] = useState("");
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -25,13 +27,21 @@ export function NewsletterSection() {
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) throw new Error(data.error || "Could not subscribe.");
+      setSending(false);
+      setSentVia("webhook");
       setSent(true);
       setEmail("");
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Could not subscribe.");
-    } finally {
-      setSending(false);
+      return;
+    } catch {
+      // fall through to a direct email — subscribing should never be a dead end
     }
+    const subject = encodeURIComponent("Add me to the weekly brief");
+    const body = encodeURIComponent(`Please add ${email} to the SabelaLogic weekly brief.`);
+    window.open(`mailto:${CONTACT.email}?subject=${subject}&body=${body}`, "_blank", "noopener");
+    setSending(false);
+    setSentVia("email");
+    setSent(true);
+    setEmail("");
   };
 
   return (
@@ -48,7 +58,9 @@ export function NewsletterSection() {
       {sent ? (
         <div className="flex items-center gap-3 border border-[#2b2827] bg-ink px-5 py-4 text-[13px] text-bone">
           <span className="text-signal">✓</span>
-          You&rsquo;re on the list. First issue lands within the week.
+          {sentVia === "webhook"
+            ? "You’re on the list. First issue lands within the week."
+            : "An email draft just opened addressed to us — send it and you’re on the list."}
         </div>
       ) : (
         <form onSubmit={onSubmit} className="flex flex-col gap-3 sm:flex-row">

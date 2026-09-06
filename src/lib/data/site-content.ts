@@ -81,6 +81,24 @@ export const CASES: CaseStudy[] = [
   },
 ];
 
+export const RR_SCREENS = [
+  {
+    src: "/brand/rr-flow-screens.webp",
+    alt: "Redeemed & Rising Awards — scan, verify, vote, pay and confirm screens",
+    caption: "The full attendee flow — scan to confirmed vote, five screens.",
+  },
+  {
+    src: "/brand/rr-landing-page.webp",
+    alt: "Redeemed & Rising Awards marketing landing page",
+    caption: "The event landing page — how it works, built for the room.",
+  },
+  {
+    src: "/brand/rr-admin-dashboard.webp",
+    alt: "Redeemed & Rising Awards live admin dashboard showing tallies and revenue split",
+    caption: "The private admin dashboard — live tallies, revenue split, refreshing every 15s.",
+  },
+];
+
 export const FLOW: FlowNode[] = [
   { tag: "01", tone: "#e04a3a", title: "QR scan", detail: "Printed code lands the attendee on the ballot." },
   { tag: "02", tone: "#e04a3a", title: "Phone number", detail: "Identity is the handset, not an account." },
