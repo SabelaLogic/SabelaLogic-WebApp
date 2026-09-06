@@ -20,6 +20,7 @@ export const CONTRIBUTORS: Contributor[] = [
     slug: "grant-sepeesa",
     name: "Grant Sepeesa",
     role: "Strategic Business Development Partner",
+    email: "mrgrantkeith@gmail.com",
     image: "/team/grant-portrait.webp",
     bio: "Opens the doors the code can't — sourcing and shaping the partnerships and client relationships that turn a build into an ongoing account.",
   },
