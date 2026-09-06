@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
     hrefLabel: "autoshowbloemfontein.co.za",
     href2: "/autoshow-live-build.html",
     href2Label: "WALK THE BUILD",
-    image: "/brand/autoshow-live-trim.png",
+    image: "/brand/autoshow-live-trim.webp",
     slotHint: "Drop an AutoShow showroom screenshot",
     flag: true,
   },
