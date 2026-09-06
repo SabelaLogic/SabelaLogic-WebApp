@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { Spinner } from "@/components/marketing/Spinner";
 
 const LINE = "Welcome to SabelaLogic, your project is about to take off ....";
 const PERKS = [
@@ -122,6 +123,7 @@ export function LoginForm() {
             type="submit"
             className="sl-submit mt-1.5 flex w-full items-center justify-center gap-2.5 rounded-[2px] border-none bg-signal px-[22px] py-[15px] font-display text-[13px] font-bold tracking-[0.06em] text-ink"
           >
+            {busy && <Spinner className="sl-spinner-ink" />}
             {busy ? "CHECKING…" : "SIGN IN"}
           </button>
         </form>

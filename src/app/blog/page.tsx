@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import { NewsletterSection } from "@/components/marketing/NewsletterSection";
+import { BlogCTA } from "@/components/marketing/BlogCTA";
 import { BLOG_POSTS } from "@/lib/data/blog-content";
 
 export const metadata: Metadata = {
@@ -25,6 +26,8 @@ export default function BlogIndex() {
               Short, specific reads on where software and automation pay off for South African businesses — plus
               the occasional look inside how Sabela Logic itself is built and run.
             </p>
+
+            <BlogCTA />
 
             <div className="mb-14 max-w-[720px]">
               <NewsletterSection />

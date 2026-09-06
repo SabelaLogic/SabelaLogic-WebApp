@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { KINDS } from "@/lib/data/site-content";
 import { MAX_LENGTHS } from "@/lib/validation";
+import { Spinner } from "./Spinner";
 
 export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { eyebrow?: string }) {
   const [brief, setBrief] = useState("");
@@ -110,11 +111,12 @@ export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { 
                 onClick={runGen}
                 disabled={busy}
                 className={
-                  "rounded-[2px] border border-signal px-[22px] py-[13px] text-[12px] font-bold tracking-[0.06em] transition-all " +
+                  "flex items-center gap-2.5 rounded-[2px] border border-signal px-[22px] py-[13px] text-[12px] font-bold tracking-[0.06em] transition-all " +
                   (busy ? "cursor-wait bg-[#241412] text-signal" : "cursor-pointer bg-signal text-ink")
                 }
                 style={busy ? undefined : { boxShadow: "rgba(224,74,58,0.26) 0 1px 3px 0, rgba(0,0,0,0.5) 0 4px 8px 3px" }}
               >
+                {busy && <Spinner />}
                 {busy ? "ARCHITECTING…" : "GENERATE BUILD BRIEF →"}
               </button>
               {output && (

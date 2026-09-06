@@ -698,9 +698,35 @@
 </head>
 <body>
 
-<!-- Background video pending a replacement file — re-add the <video> element
-     (see git history) with the correct source once it's uploaded. -->
+<video class="bg-video" id="bgVideo" muted loop playsinline preload="none" aria-hidden="true"></video>
 <div class="bg-scrim" aria-hidden="true"></div>
+
+<script>
+  // Load the background video only after the page has finished loading everything else,
+  // so a large video file never competes with the chat UI for bandwidth or blocks
+  // interactivity. Skipped entirely under prefers-reduced-motion.
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var start = function () {
+      var v = document.getElementById('bgVideo');
+      if (!v) return;
+      var source = document.createElement('source');
+      source.src = '/media/sabelalogicai-bg.mp4';
+      source.type = 'video/mp4';
+      v.appendChild(source);
+      v.load();
+      v.play().catch(function () {});
+    };
+    if (document.readyState === 'complete') {
+      setTimeout(start, 300);
+    } else {
+      window.addEventListener('load', function () {
+        setTimeout(start, 300);
+      });
+    }
+  })();
+</script>
+
 
 <header>
   <a class="icon-btn" href="/" title="Back to sabelalogic.co.za" aria-label="Back to sabelalogic.co.za">

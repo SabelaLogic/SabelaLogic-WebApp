@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CONTACT, NEED_OPTIONS, WHEN_OPTIONS } from "@/lib/data/site-content";
 import { MAX_LENGTHS } from "@/lib/validation";
+import { Spinner } from "./Spinner";
 
 interface FormState {
   name: string;
@@ -244,11 +245,12 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
                 type="submit"
                 disabled={sending}
                 className={
-                  "w-full rounded-[2px] border border-signal px-[22px] py-[15px] text-[13px] font-bold tracking-[0.06em] transition-all " +
+                  "flex w-full items-center justify-center gap-2.5 rounded-[2px] border border-signal px-[22px] py-[15px] text-[13px] font-bold tracking-[0.06em] transition-all " +
                   (sending ? "cursor-wait bg-[#241412] text-signal" : "cursor-pointer bg-signal text-ink")
                 }
                 style={sending ? undefined : { boxShadow: "rgba(224,74,58,0.26) 0 1px 3px 0, rgba(0,0,0,0.5) 0 4px 8px 3px" }}
               >
+                {sending && <Spinner />}
                 {sending ? "SENDING…" : "SEND THE BRIEF →"}
               </button>
               <p className="m-0 text-[11px] leading-[1.7] text-grey-darker">

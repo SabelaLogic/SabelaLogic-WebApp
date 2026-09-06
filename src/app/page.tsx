@@ -1,6 +1,7 @@
 import { Nav } from "@/components/marketing/Nav";
 import { SectionRail } from "@/components/marketing/SectionRail";
 import { Hero } from "@/components/marketing/Hero";
+import { TechMarquee } from "@/components/marketing/TechMarquee";
 import { BrandShowcase } from "@/components/marketing/BrandShowcase";
 import { TurnaroundSection } from "@/components/marketing/TurnaroundSection";
 import { WorkSection } from "@/components/marketing/WorkSection";
@@ -19,6 +20,7 @@ export default function Home() {
       <SectionRail />
       <main id="main-content">
         <Hero />
+        <TechMarquee />
         <BrandShowcase />
         <TurnaroundSection />
         <WorkSection />

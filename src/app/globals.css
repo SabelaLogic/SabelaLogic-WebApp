@@ -541,6 +541,63 @@ textarea::placeholder {
   animation: sl-ai-pulse 2s ease-in-out infinite;
 }
 
+/* ---------- On-brand spinner ---------- */
+@keyframes sl-spin {
+  to { transform: rotate(360deg); }
+}
+.sl-spinner {
+  border: 2px solid rgba(224, 74, 58, 0.25);
+  border-top-color: var(--color-signal);
+  animation: sl-spin 0.7s linear infinite;
+}
+.sl-spinner-ink {
+  border-color: rgba(8, 9, 10, 0.25);
+  border-top-color: var(--color-ink);
+}
+
+/* ---------- Horizontal tech-stack marquee ---------- */
+@keyframes sl-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.sl-marquee-track {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.sl-marquee-row {
+  display: inline-flex;
+  gap: clamp(28px, 5vw, 56px);
+  padding: 4px 0;
+  animation: sl-marquee-scroll 32s linear infinite;
+  white-space: nowrap;
+}
+.sl-marquee:hover .sl-marquee-row,
+.sl-marquee:focus-within .sl-marquee-row {
+  animation-play-state: paused;
+}
+.sl-marquee-row span {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-grey);
+  transition: color 180ms linear;
+}
+.sl-marquee-row span:hover {
+  color: var(--color-signal);
+}
+
+/* ---------- Mobile drawer — smooth wave-like reveal instead of an instant toggle ---------- */
+.sl-drawer {
+  transition: grid-template-rows 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .sl-drawer {
+    transition-duration: 1ms;
+  }
+}
+
 [data-rail] {
   display: none;
 }

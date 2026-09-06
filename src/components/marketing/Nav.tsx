@@ -84,42 +84,47 @@ export function Nav() {
       <nav
         id="mobile-nav-panel"
         aria-label="Mobile"
-        hidden={!open}
-        className="flex flex-col gap-1 border-b border-hairline bg-ink px-[clamp(16px,4vw,48px)] py-4 font-mono text-[13px] tracking-[0.08em] md:hidden"
+        inert={!open}
+        className="sl-drawer grid border-b border-hairline bg-ink md:hidden"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
       >
-        {NAV_LINKS.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            onClick={() => setOpen(false)}
-            className="border-b border-hairline-soft py-3 text-bone-dim"
-          >
-            {link.label}
-          </a>
-        ))}
-        <Link
-          href="/login"
-          onClick={() => setOpen(false)}
-          className="flex items-center gap-2 border-b border-hairline-soft py-3 text-bone-dim"
-        >
-          <span className="sl-signin-dot" />
-          SIGN IN
-        </Link>
-        <a
-          href="/start-a-build"
-          onClick={() => setOpen(false)}
-          className="mt-3 flex items-center justify-center gap-[7px] rounded-[2px] border border-signal bg-signal px-3.5 py-3 font-bold text-ink"
-        >
-          START A BUILD
-        </a>
-        <a
-          href="/sabelalogicai.html"
-          onClick={() => setOpen(false)}
-          className="sl-ai-btn mt-3 justify-center py-3"
-        >
-          <span className="sl-ai-dot" />
-          SABELALOGICAI
-        </a>
+        <div className="overflow-hidden">
+          <div className="flex flex-col gap-1 px-[clamp(16px,4vw,48px)] py-4 font-mono text-[13px] tracking-[0.08em]">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="border-b border-hairline-soft py-3 text-bone-dim"
+              >
+                {link.label}
+              </a>
+            ))}
+            <Link
+              href="/login"
+              onClick={() => setOpen(false)}
+              className="flex items-center gap-2 border-b border-hairline-soft py-3 text-bone-dim"
+            >
+              <span className="sl-signin-dot" />
+              SIGN IN
+            </Link>
+            <a
+              href="/start-a-build"
+              onClick={() => setOpen(false)}
+              className="mt-3 flex items-center justify-center gap-[7px] rounded-[2px] border border-signal bg-signal px-3.5 py-3 font-bold text-ink"
+            >
+              START A BUILD
+            </a>
+            <a
+              href="/sabelalogicai.html"
+              onClick={() => setOpen(false)}
+              className="sl-ai-btn mt-3 justify-center py-3"
+            >
+              <span className="sl-ai-dot" />
+              SABELALOGICAI
+            </a>
+          </div>
+        </div>
       </nav>
     </header>
   );
