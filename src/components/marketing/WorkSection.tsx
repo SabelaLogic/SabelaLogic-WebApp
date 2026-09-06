@@ -20,8 +20,13 @@ export function WorkSection() {
   );
 
   return (
-    <section id="work" className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
-      <div className="mx-auto max-w-[1180px]">
+    <section
+      id="work"
+      className="relative overflow-hidden border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]"
+      style={{ backgroundColor: "rgba(8,9,10,0.45)" }}
+    >
+      <div className="work-floor-bg" aria-hidden="true" />
+      <div className="relative z-10 mx-auto max-w-[1180px]">
         <div className="mb-10 flex flex-wrap items-end justify-between gap-5">
           <div>
             <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">01 / DEPLOYMENTS</div>

@@ -36,7 +36,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${newsreader.variable} ${plexMono.variable} ${plexSans.variable} h-full`}
     >
-      <body className="min-h-full bg-ink text-bone">
+      <body className="min-h-full text-bone">
+        <div className="master-backdrop" aria-hidden="true" />
         <a
           href="#main-content"
           className="fixed left-3 top-3 z-[100] -translate-y-16 rounded-[2px] border border-signal bg-ink px-4 py-2.5 text-[12px] font-bold tracking-[0.06em] text-signal transition-transform duration-150 ease-out focus:translate-y-0"
