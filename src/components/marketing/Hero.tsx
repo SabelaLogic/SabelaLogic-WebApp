@@ -63,6 +63,10 @@ export function Hero() {
       let lastY: number | null = null;
       let lastT = 0;
       const move = (ev: PointerEvent) => {
+        // Touch drags/scrolls fire pointermove too — only real mouse movement should
+        // drive the reactive volume, otherwise every scroll on a touchscreen reads as
+        // a fast cursor swipe and the volume jumps around unpredictably.
+        if (ev.pointerType !== "mouse") return;
         const now = performance.now();
         if (lastX !== null && lastY !== null) {
           const d = Math.hypot(ev.clientX - lastX, ev.clientY - lastY);
