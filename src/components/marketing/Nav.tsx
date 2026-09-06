@@ -28,7 +28,7 @@ export function Nav() {
             alt="Sabela Logic"
             width={18}
             height={28}
-            className="block h-7 w-auto"
+            className="sl-logo-swivel block h-7 w-auto"
           />
           <span className="text-[13.5px] font-semibold tracking-[0.17em]">
             SABELA<span className="text-signal">.</span>LOGIC

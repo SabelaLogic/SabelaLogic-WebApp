@@ -571,6 +571,17 @@ textarea::placeholder {
   animation: sl-accent-pulse 3.2s ease-in-out infinite;
 }
 
+/* ---------- Logo swivel — slow, persistent, like a pendant hanging and settling ---------- */
+@keyframes sl-logo-swivel {
+  0%, 100% { transform: rotate(-7deg); }
+  50% { transform: rotate(7deg); }
+}
+.sl-logo-swivel {
+  display: inline-block;
+  transform-origin: 50% 12%;
+  animation: sl-logo-swivel 6s ease-in-out infinite;
+}
+
 /* ---------- On-brand spinner ---------- */
 @keyframes sl-spin {
   to { transform: rotate(360deg); }

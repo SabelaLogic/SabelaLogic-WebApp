@@ -20,7 +20,7 @@ export default function LoginPage() {
     >
       <div className="flex h-[58px] items-center justify-between gap-5 border-b border-hairline px-[clamp(16px,4vw,48px)]">
         <Link href="/" className="flex items-center gap-[11px] text-bone">
-          <Image src="/brand/monogram.png" alt="Sabela Logic" width={18} height={28} className="block h-7 w-auto" />
+          <Image src="/brand/monogram.png" alt="Sabela Logic" width={18} height={28} className="sl-logo-swivel block h-7 w-auto" />
           <span className="font-mono text-[13.5px] font-semibold tracking-[0.17em]">
             SABELA<span className="text-signal">.</span>LOGIC
           </span>
