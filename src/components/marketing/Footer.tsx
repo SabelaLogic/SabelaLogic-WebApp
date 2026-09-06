@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { FOOTER_COLUMNS } from "@/lib/data/site-content";
 
 export function Footer() {
@@ -23,11 +24,19 @@ export function Footer() {
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.head} className="flex flex-col gap-[11px]">
               <span className="text-[10px] tracking-[0.16em] text-grey-darker">{col.head}</span>
-              {col.links.map((lk) => (
-                <a key={lk.label} href={lk.href} className="text-[12px] text-bone-dim hover:text-signal">
-                  {lk.label}
-                </a>
-              ))}
+              {col.links.map((lk) =>
+                // Static .html files aren't Next.js routes, so Link's client-side
+                // router can't resolve them — a real navigation is correct here.
+                lk.href.endsWith(".html") ? (
+                  <a key={lk.label} href={lk.href} className="text-[12px] text-bone-dim hover:text-signal">
+                    {lk.label}
+                  </a>
+                ) : (
+                  <Link key={lk.label} href={lk.href} className="text-[12px] text-bone-dim hover:text-signal">
+                    {lk.label}
+                  </Link>
+                ),
+              )}
             </div>
           ))}
         </div>

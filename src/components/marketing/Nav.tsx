@@ -40,20 +40,20 @@ export function Nav() {
           className="hidden items-center gap-[clamp(12px,2.2vw,30px)] font-mono text-[11.5px] tracking-[0.1em] md:flex"
         >
           {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="sl-nav-link">
+            <Link key={link.href} href={link.href} className="sl-nav-link">
               {link.label}
-            </a>
+            </Link>
           ))}
           <Link href="/login" className="sl-signin flex items-center gap-2 rounded-[2px] px-3.5 py-1.5">
             <span className="sl-signin-dot" />
             SIGN IN
           </Link>
-          <a
+          <Link
             href="/start-a-build"
             className="sl-btn-outline flex items-center gap-[7px] rounded-[2px] border border-signal px-3.5 py-1.5 text-signal"
           >
             START A BUILD
-          </a>
+          </Link>
           <a href="/sabelalogicai.html" className="sl-ai-btn">
             <span className="sl-ai-dot" />
             SABELALOGICAI
@@ -93,14 +93,14 @@ export function Nav() {
         <div className="overflow-hidden">
           <div className="flex flex-col gap-1 px-[clamp(16px,4vw,48px)] py-4 font-mono text-[13px] tracking-[0.08em]">
             {NAV_LINKS.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
                 className="border-b border-hairline-soft py-3 text-bone-dim"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <Link
               href="/login"
@@ -110,13 +110,13 @@ export function Nav() {
               <span className="sl-signin-dot" />
               SIGN IN
             </Link>
-            <a
+            <Link
               href="/start-a-build"
               onClick={() => setOpen(false)}
               className="mt-3 flex items-center justify-center gap-[7px] rounded-[2px] border border-signal bg-signal px-3.5 py-3 font-bold text-ink"
             >
               START A BUILD
-            </a>
+            </Link>
             <a
               href="/sabelalogicai.html"
               onClick={() => setOpen(false)}

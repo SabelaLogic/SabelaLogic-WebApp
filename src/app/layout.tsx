@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Newsreader, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { BackToTop } from "@/components/marketing/BackToTop";
 import { CookieBanner } from "@/components/marketing/CookieBanner";
+import { AmbientAudio } from "@/components/marketing/AmbientAudio";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -49,6 +50,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <BackToTop />
         <CookieBanner />
+        <AmbientAudio />
       </body>
     </html>
   );

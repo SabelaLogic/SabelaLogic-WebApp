@@ -42,12 +42,12 @@ export function WorkshopToolShell({ tool, children }: { tool: WorkshopTool; chil
                 Free tools cover the basics. For a real system built around your business, start a build.
               </p>
             </div>
-            <a
+            <Link
               href="/start-a-build"
               className="sl-btn-outline flex shrink-0 items-center gap-[7px] rounded-[2px] border border-signal px-5 py-3 text-[12px] font-bold tracking-[0.06em] text-signal"
             >
               START A BUILD →
-            </a>
+            </Link>
           </div>
         </section>
       </main>
