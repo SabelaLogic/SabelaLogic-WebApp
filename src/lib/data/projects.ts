@@ -25,7 +25,7 @@ export const PROJECTS: Project[] = [
     summary:
       "Attendees scan a QR, verify by SMS one-time PIN, vote across 12 categories for their conference, pay per vote through PayFast and get an SMS receipt. A password-gated dashboard shows live tallies and the revenue split.",
     stack: ["Next.js", "Supabase / Postgres", "PayFast ITN", "BulkSMS", "Vercel"],
-    slotHint: "Drop a Redeemed & Rising ballot screenshot",
+    image: "/brand/redeemed-rising-ballot.webp",
     flag: true,
   },
   {
@@ -52,7 +52,7 @@ export const PROJECTS: Project[] = [
     stack: ["React", "Firebase Hosting"],
     href: "https://awm-leadership-companion.web.app",
     hrefLabel: "awm-leadership-companion.web.app",
-    slotHint: "Drop an AWM Companion screenshot",
+    image: "/brand/awm-leadership-companion.webp",
     flag: true,
   },
   {
