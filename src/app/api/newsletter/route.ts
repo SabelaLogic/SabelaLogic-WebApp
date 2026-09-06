@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { isValidEmail, MAX_LENGTHS, withinMax } from "@/lib/validation";
 
 // INTEGRATION POINT — newsletter signup. Wire NEWSLETTER_WEBHOOK_URL to a real
 // list (Mailchimp, ConvertKit, a serverless function that appends to a sheet).
@@ -9,13 +10,11 @@ interface NewsletterBody {
   source?: string;
 }
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
 export async function POST(request: Request) {
   const body = (await request.json().catch(() => ({}))) as NewsletterBody;
   const email = body.email?.trim() ?? "";
 
-  if (!EMAIL_RE.test(email)) {
+  if (!withinMax(email, MAX_LENGTHS.email) || !isValidEmail(email)) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });
   }
 

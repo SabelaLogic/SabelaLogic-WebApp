@@ -2,7 +2,7 @@ import { SLA } from "@/lib/data/site-content";
 
 export function TurnaroundSection() {
   return (
-    <section className="border-b border-hairline bg-ink-raised px-[clamp(16px,4vw,48px)] py-[clamp(40px,5vw,64px)]">
+    <section id="turnaround" className="border-b border-hairline bg-ink-raised px-[clamp(16px,4vw,48px)] py-[clamp(40px,5vw,64px)]">
       <div className="mx-auto max-w-[1180px]">
         <div className="mb-7 flex flex-wrap items-baseline justify-between gap-4">
           <h2 className="m-0 text-[12px] font-medium tracking-[0.22em] text-grey">

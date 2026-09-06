@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { CONTACT, NEED_OPTIONS, WHEN_OPTIONS } from "@/lib/data/site-content";
+import { MAX_LENGTHS } from "@/lib/validation";
 
 interface FormState {
   name: string;
@@ -133,13 +134,12 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
           </div>
           <div className="grid grid-cols-[88px_1fr] items-start gap-[18px] border border-hairline bg-ink-raised p-5">
             <Image
-              src="https://sabelalogic26.firebaseapp.com/lunga_portrait.jpg"
+              src="/team/lunga-portrait.webp"
               alt="Lunga Xhamela"
               width={88}
               height={104}
               className="h-[104px] w-[88px] border border-[#2b2827] bg-[#151413] object-cover"
               style={{ objectPosition: "52% 22%", filter: "grayscale(100%) contrast(118%)" }}
-              unoptimized
             />
             <div>
               <div className="mb-3 text-[10.5px] tracking-[0.16em] text-grey">OPERATOR</div>
@@ -178,6 +178,7 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
                     value={form.name}
                     onChange={setField("name")}
                     required
+                    maxLength={MAX_LENGTHS.name}
                     placeholder="Your name"
                     className="sl-field rounded-[2px] border border-[#2b2827] bg-ink px-[13px] py-3 text-[13px] text-bone outline-none"
                   />
@@ -188,6 +189,7 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
                     value={form.contact}
                     onChange={setField("contact")}
                     required
+                    maxLength={MAX_LENGTHS.contact}
                     placeholder="you@company.co.za"
                     className="sl-field rounded-[2px] border border-[#2b2827] bg-ink px-[13px] py-3 text-[13px] text-bone outline-none"
                   />
@@ -228,6 +230,7 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
                   onChange={setField("brief")}
                   required
                   rows={6}
+                  maxLength={MAX_LENGTHS.brief}
                   placeholder="What it should do, who uses it, and anything that already exists."
                   className="sl-field resize-y rounded-[2px] border border-[#2b2827] bg-ink px-[13px] py-3 text-[13px] leading-[1.7] text-bone outline-none"
                 />

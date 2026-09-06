@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { MAX_LENGTHS, withinMax } from "@/lib/validation";
 
 // INTEGRATION POINT — architecture generator.
 // Runs server-side so no model key is ever shipped to the client. Wire ANTHROPIC_API_KEY
@@ -23,6 +24,10 @@ export async function POST(request: Request) {
 
   if (!brief || brief.trim().length < 12) {
     return NextResponse.json({ error: "Give me a sentence or two more." }, { status: 400 });
+  }
+
+  if (!withinMax(brief, MAX_LENGTHS.brief) || !withinMax(kind ?? "", MAX_LENGTHS.type)) {
+    return NextResponse.json({ error: "That brief is too long — trim it down a bit." }, { status: 400 });
   }
 
   const apiKey = process.env.ANTHROPIC_API_KEY;

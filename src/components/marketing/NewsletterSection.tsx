@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { isValidEmail, MAX_LENGTHS } from "@/lib/validation";
 
 export function NewsletterSection() {
   const [email, setEmail] = useState("");
@@ -11,6 +12,10 @@ export function NewsletterSection() {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
+    if (!isValidEmail(email)) {
+      setError("Enter a valid email address.");
+      return;
+    }
     setSending(true);
     try {
       const res = await fetch("/api/newsletter", {
@@ -56,6 +61,7 @@ export function NewsletterSection() {
               setError("");
             }}
             placeholder="you@company.co.za"
+            maxLength={MAX_LENGTHS.email}
             className="sl-field flex-1 rounded-[2px] border border-[#2b2827] bg-ink px-[13px] py-3 text-[13px] text-bone outline-none"
           />
           <button

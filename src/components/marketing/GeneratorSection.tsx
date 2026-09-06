@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { KINDS } from "@/lib/data/site-content";
+import { MAX_LENGTHS } from "@/lib/validation";
 
 export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { eyebrow?: string }) {
   const [brief, setBrief] = useState("");
@@ -79,6 +80,7 @@ export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { 
                   setError("");
                 }}
                 rows={4}
+                maxLength={MAX_LENGTHS.brief}
                 placeholder="A booking system for my mobile car-wash — customers pick a slot and pay a deposit, my drivers see the day's route on their phones."
                 className="sl-field w-full resize-y rounded-[2px] border border-[#2b2827] bg-ink px-3.5 py-3.5 text-[13px] leading-[1.7] text-bone outline-none"
               />

@@ -1,4 +1,5 @@
 import { Nav } from "@/components/marketing/Nav";
+import { SectionRail } from "@/components/marketing/SectionRail";
 import { Hero } from "@/components/marketing/Hero";
 import { BrandShowcase } from "@/components/marketing/BrandShowcase";
 import { TurnaroundSection } from "@/components/marketing/TurnaroundSection";
@@ -15,16 +16,19 @@ export default function Home() {
   return (
     <div className="max-w-full overflow-x-hidden bg-ink font-mono">
       <Nav />
-      <Hero />
-      <BrandShowcase />
-      <TurnaroundSection />
-      <WorkSection />
-      <ProofSection />
-      <ProcessSection />
-      <BuildLogSection />
-      <GeneratorSection />
-      <ServicesSection />
-      <ContactSection />
+      <SectionRail />
+      <main id="main-content">
+        <Hero />
+        <BrandShowcase />
+        <TurnaroundSection />
+        <WorkSection />
+        <ProofSection />
+        <ProcessSection />
+        <BuildLogSection />
+        <GeneratorSection />
+        <ServicesSection />
+        <ContactSection />
+      </main>
       <Footer />
     </div>
   );

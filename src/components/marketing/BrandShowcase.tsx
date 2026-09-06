@@ -51,7 +51,7 @@ export function BrandShowcase() {
         : "absolute inset-x-0 top-0 h-screen w-full";
 
   return (
-    <section ref={sectionRef} className="relative h-[220vh] border-b border-hairline bg-ink">
+    <section id="showcase" ref={sectionRef} className="relative h-[220vh] border-b border-hairline bg-ink">
       <div className={`${stageClass} overflow-hidden`}>
         <BrandCanvas sectionRef={sectionRef} />
         <div className="pointer-events-none relative mx-auto flex h-full max-w-[1180px] flex-col justify-center px-[clamp(16px,4vw,48px)]">

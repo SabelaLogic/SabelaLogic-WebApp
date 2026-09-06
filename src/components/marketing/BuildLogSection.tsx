@@ -4,7 +4,7 @@ export function BuildLogSection() {
   const items = [...TICKER_ITEMS, ...TICKER_ITEMS];
 
   return (
-    <section className="border-b border-hairline bg-ink-raised px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
+    <section id="build-log" className="border-b border-hairline bg-ink-raised px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
       <div className="mx-auto grid max-w-[1180px] grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-[clamp(28px,5vw,64px)]">
         <div>
           <div className="mb-3.5 text-[11px] tracking-[0.22em] text-signal">04 / BUILD LOG</div>

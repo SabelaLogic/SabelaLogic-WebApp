@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from "react";
 import { HERO_STATS } from "@/lib/data/site-content";
 
 const HERO_IMAGES = [
-  "https://sabelalogic26.firebaseapp.com/mythical-chinese-dragon-stockcake.webp",
-  "https://sabelalogic26.firebaseapp.com/bg-2.jpg",
-  "https://sabelalogic26.firebaseapp.com/bg-3.jpg",
-  "https://sabelalogic26.firebaseapp.com/bg-4.jpg",
+  "/hero/dragon.webp",
+  "/hero/bg-2.webp",
+  "/hero/bg-3.webp",
+  "/hero/bg-4.webp",
 ];
 
 const AUDIO_SRC = "https://sabelalogic26.firebaseapp.com/Sabela.mp3";
@@ -25,6 +25,8 @@ export function Hero() {
   const idleRef = useRef(0);
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) return;
     const timer = setInterval(() => {
       setSlide((s) => (s + 1) % HERO_IMAGES.length);
     }, SLIDESHOW_SECONDS * 1000);
@@ -32,10 +34,11 @@ export function Hero() {
   }, []);
 
   useEffect(() => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const audio = new Audio(AUDIO_SRC);
     audio.loop = true;
     audio.preload = "auto";
-    audio.volume = 0;
+    audio.volume = reduceMotion ? 0.14 : 0;
     audioRef.current = audio;
     const base = 0.14;
     const peak = 0.52;
@@ -52,36 +55,45 @@ export function Hero() {
     window.addEventListener("pointerdown", unlock);
     window.addEventListener("keydown", unlock);
 
-    let lastX: number | null = null;
-    let lastY: number | null = null;
-    let lastT = 0;
-    const move = (ev: PointerEvent) => {
-      const now = performance.now();
-      if (lastX !== null && lastY !== null) {
-        const d = Math.hypot(ev.clientX - lastX, ev.clientY - lastY);
-        const dt = Math.max(now - lastT, 16);
-        const v = Math.min((d / dt) * 22, 1);
-        levelRef.current = levelRef.current * 0.72 + v * 0.28;
-      }
-      lastX = ev.clientX;
-      lastY = ev.clientY;
-      lastT = now;
-      idleRef.current = now;
-    };
-    window.addEventListener("pointermove", move, { passive: true });
+    // Reactive volume tracks pointer movement — skipped under reduced motion so the audio
+    // system stays at a flat, predictable level instead of an animated one.
+    let cleanupReactivity = () => {};
+    if (!reduceMotion) {
+      let lastX: number | null = null;
+      let lastY: number | null = null;
+      let lastT = 0;
+      const move = (ev: PointerEvent) => {
+        const now = performance.now();
+        if (lastX !== null && lastY !== null) {
+          const d = Math.hypot(ev.clientX - lastX, ev.clientY - lastY);
+          const dt = Math.max(now - lastT, 16);
+          const v = Math.min((d / dt) * 22, 1);
+          levelRef.current = levelRef.current * 0.72 + v * 0.28;
+        }
+        lastX = ev.clientX;
+        lastY = ev.clientY;
+        lastT = now;
+        idleRef.current = now;
+      };
+      window.addEventListener("pointermove", move, { passive: true });
 
-    const raf = setInterval(() => {
-      if (performance.now() - idleRef.current > 260) levelRef.current *= 0.86;
-      const lv = levelRef.current;
-      if (!audio.paused) {
-        audio.volume = Math.min(base + lv * (peak - base), 1);
-      }
-      setLevel((prev) => (Math.abs(lv - prev) > 0.045 ? lv : prev));
-    }, 90);
+      const raf = setInterval(() => {
+        if (performance.now() - idleRef.current > 260) levelRef.current *= 0.86;
+        const lv = levelRef.current;
+        if (!audio.paused) {
+          audio.volume = Math.min(base + lv * (peak - base), 1);
+        }
+        setLevel((prev) => (Math.abs(lv - prev) > 0.045 ? lv : prev));
+      }, 90);
+
+      cleanupReactivity = () => {
+        clearInterval(raf);
+        window.removeEventListener("pointermove", move);
+      };
+    }
 
     return () => {
-      clearInterval(raf);
-      window.removeEventListener("pointermove", move);
+      cleanupReactivity();
       window.removeEventListener("pointerdown", unlock);
       window.removeEventListener("keydown", unlock);
       audio.pause();
@@ -135,7 +147,6 @@ export function Hero() {
                   filter: "grayscale(88%) contrast(142%) brightness(0.72)",
                   mixBlendMode: "lighten",
                 }}
-                unoptimized
               />
             </div>
           ))}
@@ -227,6 +238,7 @@ export function Hero() {
       <button
         onClick={toggleAudio}
         title={audioOn ? "Mute ambient audio" : "Play ambient audio"}
+        aria-label={audioOn ? "Mute ambient audio" : "Play ambient audio"}
         className="sl-widget-hover fixed right-3.5 bottom-3.5 z-[60] flex select-none items-center gap-[11px] rounded-[2px] border border-hairline bg-ink/84 px-3.5 py-[9px] backdrop-blur-[12px]"
         style={{ boxShadow: "rgba(0,0,0,0.5) 0 4px 14px 2px" }}
       >

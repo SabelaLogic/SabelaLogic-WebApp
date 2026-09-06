@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { MAX_LENGTHS, withinMax } from "@/lib/validation";
 
 // INTEGRATION POINT — contact form. Wire CONTACT_WEBHOOK_URL to a real inbox (Formspree,
 // a serverless email sender, a CRM webhook). Until configured this returns an error and the
@@ -18,6 +19,16 @@ export async function POST(request: Request) {
 
   if (!body.name?.trim() || !body.contact?.trim() || !body.brief?.trim()) {
     return NextResponse.json({ error: "Name, contact and brief are required." }, { status: 400 });
+  }
+
+  if (
+    !withinMax(body.name, MAX_LENGTHS.name) ||
+    !withinMax(body.contact, MAX_LENGTHS.contact) ||
+    !withinMax(body.type ?? "", MAX_LENGTHS.type) ||
+    !withinMax(body.when ?? "", MAX_LENGTHS.when) ||
+    !withinMax(body.brief, MAX_LENGTHS.brief)
+  ) {
+    return NextResponse.json({ error: "One of the fields is too long." }, { status: 400 });
   }
 
   const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
