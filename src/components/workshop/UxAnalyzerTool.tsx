@@ -90,6 +90,23 @@ export function UxAnalyzerTool() {
 
   return (
     <div className="flex flex-col gap-6">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] items-center gap-6 border border-hairline bg-ink-raised p-5">
+        <div>
+          <div className="mb-2 text-[10.5px] tracking-[0.16em] text-signal">HOW THIS SCORE WORKS</div>
+          <p className="m-0 text-[13px] leading-[1.7] text-bone-dim" style={{ textWrap: "pretty" }}>
+            A minute from Lunga on what the score actually measures, and why the free scan only shows part of
+            the picture.
+          </p>
+        </div>
+        <video
+          controls
+          preload="metadata"
+          className="mx-auto aspect-[9/16] max-h-[320px] w-auto rounded-[2px] border border-hairline bg-ink"
+        >
+          <source src="/media/ux-analyzer-intro.mp4" type="video/mp4" />
+        </video>
+      </div>
+
       <form onSubmit={scan} className="flex flex-col gap-3 sm:flex-row">
         <input
           type="url"
