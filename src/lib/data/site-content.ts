@@ -250,7 +250,7 @@ export const SERVICES: ServiceItem[] = [
   {
     name: "Web app MVP",
     time: "10 DAYS",
-    price: "From R45 000",
+    price: "From R70 000",
     body: "A real product: accounts, a database, money moving, an admin view.",
     items: [
       "Authentication and role-based access",
