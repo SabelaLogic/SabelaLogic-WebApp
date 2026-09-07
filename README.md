@@ -33,19 +33,30 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Integration points
 
-Four things are deliberately stubbed, each marked in code:
+See `HANDOVER.md` for the full current state, environment traps and workflow.
 
-1. **Login authentication** (`src/components/login/LoginForm.tsx`) — wire to
-   the portal's real auth endpoint, then route to `/portal` for that client.
-2. **Narration** (`src/components/visualizer/JourneyVisualizer.tsx`) — each
+Live and backed by D1 (`sabela_client_portal`, bound as `env.DB`):
+
+- **Client login and portal gating** — `/login` authenticates against the
+  `customers` table (PBKDF2 + server-side sessions), then gates `/portal`
+  behind the SLA/privacy acceptance step at `/acceptance`.
+- **Newsletter signup** (`src/app/api/newsletter/route.ts`) — stored in
+  `newsletter_signups`. Optionally forwards to `NEWSLETTER_WEBHOOK_URL`
+  (Zapier Catch Hook, Mailchimp, etc.) when that secret is set.
+
+Still stubbed, each marked in code:
+
+1. **Narration** (`src/components/visualizer/JourneyVisualizer.tsx`) — each
    stage fires `onNarration({ stage, src, el })` once, on first scroll into
    view. No audio clips exist yet.
-3. **Architecture generator** (`src/app/api/generate/route.ts`) — set
+2. **Architecture generator** (`src/app/api/generate/route.ts`) — set
    `ANTHROPIC_API_KEY` to enable live generation; without it the UI shows a
    graceful fallback.
-4. **Contact form** (`src/app/api/contact/route.ts`) — set
+3. **Contact form** (`src/app/api/contact/route.ts`) — set
    `CONTACT_WEBHOOK_URL` to a real inbox/webhook; without it the form falls
    back to opening WhatsApp with the brief pre-composed.
+4. **Portal build data** — `/portal` reads the client and project name from
+   D1 but still renders mock stages/workstreams from `visualizer-defaults.ts`.
 
 ## Assets
 
