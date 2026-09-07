@@ -37,3 +37,16 @@ CREATE TABLE IF NOT EXISTS sessions (
   customer_id TEXT REFERENCES customers(id),
   expires_at TEXT NOT NULL
 );
+
+-- Newsletter signups. This is the source of truth; NEWSLETTER_WEBHOOK_URL
+-- forwarding (Zapier etc.) is optional on top, and `forwarded` records whether
+-- that forward succeeded so failed ones can be replayed.
+CREATE TABLE IF NOT EXISTS newsletter_signups (
+  id TEXT PRIMARY KEY,
+  email TEXT NOT NULL,
+  source TEXT,
+  forwarded INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_newsletter_email ON newsletter_signups(email);
