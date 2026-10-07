@@ -75,7 +75,7 @@ export const CASES: CaseStudy[] = [
     problem:
       "A conference needed a nomination-to-vote pipeline for its annual awards — something that could go from brief to a working, votable system before the event, not after it.",
     build:
-      "Nomination intake through to a live voting platform: SMS one-time PIN verification, per-conference ballots, per-vote payment through PayFast, and a password-gated dashboard showing live tallies and the revenue split.",
+      "Nomination intake through to a live voting platform: SMS one-time PIN verification, per-conference ballots, secure per-vote online payment, and a password-gated dashboard showing live tallies and the revenue split.",
     result:
       "A real event ran on it. Not a demo — the actual mechanism people used to nominate, pay and vote, across seven conferences and twelve categories.",
   },
@@ -115,7 +115,7 @@ export const FLOW: FlowNode[] = [
     detail: "Ballot filters to that conference’s nominees only.",
   },
   { tag: "05", tone: "#e04a3a", title: "Cart review", detail: "Twelve categories, priced per vote, totalled." },
-  { tag: "06", tone: "#f2a93b", title: "PayFast redirect", detail: "Money never touches the app server." },
+  { tag: "06", tone: "#f2a93b", title: "Secure payment redirect", detail: "Money never touches the app server." },
   {
     tag: "07",
     tone: "#f2a93b",
@@ -277,7 +277,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "AWM Leadership Companion", href: "https://awm-leadership-companion.web.app" },
       { label: "AutoShow Dealer OS", href: "https://autoshowbloemfontein.co.za" },
-      { label: "SabelaLogicAI", href: "/sabelalogicai.html" },
+      { label: "SabelaLogicAI", href: "/[REDACTED]ai.html" },
     ],
   },
   {
@@ -311,5 +311,5 @@ export const WHEN_OPTIONS = ["As soon as possible", "Within two weeks", "Within 
 
 export const CONTACT = {
   whatsappNumber: "27661472774",
-  email: "lunga@sabelalogic.co.za",
+  email: "lunga@[REDACTED].co.za",
 };

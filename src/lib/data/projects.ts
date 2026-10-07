@@ -23,8 +23,8 @@ export const PROJECTS: Project[] = [
     kind: "Voting & payments platform",
     status: "SHIPPING",
     summary:
-      "Attendees scan a QR, verify by SMS one-time PIN, vote across 12 categories for their conference, pay per vote through PayFast and get an SMS receipt. A password-gated dashboard shows live tallies and the revenue split.",
-    stack: ["Next.js", "Supabase / Postgres", "PayFast ITN", "BulkSMS", "Vercel"],
+      "Attendees scan a QR, verify by SMS one-time PIN, vote across 12 categories for their conference, pay per vote through a secure online payment gateway and get an SMS receipt. A password-gated dashboard shows live tallies and the revenue split.",
+    stack: ["Next.js", "Supabase / Postgres", "Payment gateway webhooks", "BulkSMS", "Vercel"],
     image: "/brand/redeemed-rising-ballot.webp",
     flag: true,
   },
