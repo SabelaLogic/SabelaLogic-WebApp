@@ -102,7 +102,7 @@ export function Hero() {
                 "sl-draw 900ms cubic-bezier(.7,0,.3,1) both, sl-signal 3.4s ease-in-out 1s infinite",
             }}
           />
-          PRETORIA, SOUTH AFRICA — AVAILABLE FOR WORK
+          BLOEMFONTEIN, SOUTH AFRICA — AVAILABLE FOR WORK
         </div>
         <h1
           className="mb-6 max-w-[16ch] font-display text-[clamp(38px,7.2vw,88px)] leading-[0.98] font-extrabold tracking-[-0.03em]"

@@ -1,0 +1,27 @@
+/* SabelaLogic shared legal-page styling */
+:root{--ink:#14161a;--muted:#5b616b;--line:#e3e5e8;--accent:#0f6b5c;--bg:#fbfbfa}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header.site,footer.site{border-bottom:1px solid var(--line);background:#fff}
+footer.site{border-top:1px solid var(--line);border-bottom:0;margin-top:3rem}
+.wrap{max-width:780px;margin:0 auto;padding:0 1.25rem}
+header.site .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding-top:1rem;padding-bottom:1rem}
+.brand{font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);text-decoration:none}
+nav a{color:var(--muted);text-decoration:none;margin-left:1rem;font-size:.92rem}
+nav a:hover,nav a[aria-current=page]{color:var(--accent)}
+main{padding:2rem 0}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .25rem}
+h2{font-size:1.2rem;margin:2.2rem 0 .5rem;padding-top:.5rem;border-top:1px solid var(--line)}
+h3{font-size:1rem;margin:1.4rem 0 .3rem}
+.meta{color:var(--muted);font-size:.9rem;margin:0 0 1.5rem}
+a{color:var(--accent)}
+ul,ol{padding-left:1.3rem}
+li{margin:.2rem 0}
+table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+th,td{text-align:left;vertical-align:top;padding:.55rem .6rem;border-bottom:1px solid var(--line)}
+th{width:38%;color:var(--muted);font-weight:600}
+.note{background:#fff;border:1px solid var(--line);border-left:4px solid var(--accent);padding:.8rem 1rem;border-radius:4px}
+footer.site .wrap{padding-top:1.2rem;padding-bottom:1.6rem;font-size:.88rem;color:var(--muted)}
+footer.site a{color:var(--muted);margin-right:1rem}
+@media print{header.site nav,footer.site{display:none}body{background:#fff}}

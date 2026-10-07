@@ -277,7 +277,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "AWM Leadership Companion", href: "https://awm-leadership-companion.web.app" },
       { label: "AutoShow Dealer OS", href: "https://autoshowbloemfontein.co.za" },
-      { label: "SabelaLogicAI", href: "/sabelalogicai.html" },
+      { label: "SabelaLogicAI", href: "/[REDACTED]ai.html" },
     ],
   },
   {
@@ -294,6 +294,15 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Contact", href: "/#contact" },
     ],
   },
+  {
+    head: "LEGAL",
+    links: [
+      { label: "Terms", href: "/terms.html" },
+      { label: "Privacy", href: "/privacy.html" },
+      { label: "Refund Policy", href: "/refund.html" },
+      { label: "Contact", href: "/contact.html" },
+    ],
+  },
 ];
 
 export const KINDS = ["Landing page", "Full website", "Web app MVP", "Automation"];
@@ -302,5 +311,5 @@ export const WHEN_OPTIONS = ["As soon as possible", "Within two weeks", "Within 
 
 export const CONTACT = {
   whatsappNumber: "27661472774",
-  email: "lunga@sabelalogic.co.za",
+  email: "lunga@[REDACTED].co.za",
 };
