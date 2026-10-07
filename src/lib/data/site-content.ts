@@ -277,7 +277,7 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
     links: [
       { label: "AWM Leadership Companion", href: "https://awm-leadership-companion.web.app" },
       { label: "AutoShow Dealer OS", href: "https://autoshowbloemfontein.co.za" },
-      { label: "SabelaLogicAI", href: "/[REDACTED]ai.html" },
+      { label: "SabelaLogicAI", href: "/sabelalogicai.html" },
     ],
   },
   {
@@ -311,5 +311,5 @@ export const WHEN_OPTIONS = ["As soon as possible", "Within two weeks", "Within 
 
 export const CONTACT = {
   whatsappNumber: "27661472774",
-  email: "lunga@[REDACTED].co.za",
+  email: "lunga@sabelalogic.co.za",
 };
