@@ -37,6 +37,10 @@ export const metadata: Metadata = {
   title: DEFAULT_TITLE,
   description: DEFAULT_DESCRIPTION,
   applicationName: SITE_NAME,
+  // Google Search Console ownership check (renders <meta name="google-site-verification">).
+  verification: {
+    google: "n5q2_Ov2M8PoWpWev6y9jSFi98W468AChZZdX5MHK-o",
+  },
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
