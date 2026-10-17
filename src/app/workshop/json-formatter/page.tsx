@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import { WorkshopToolShell } from "@/components/workshop/WorkshopToolShell";
 import { JsonFormatterTool } from "@/components/workshop/JsonFormatterTool";
 import { getWorkshopTool } from "@/lib/data/workshop-tools";
+import { toolMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "JSON Formatter — Sabela Logic Workshop",
-  description: "Free JSON formatter, validator and minifier. Runs entirely in your browser.",
-};
+const tool = getWorkshopTool("json-formatter")!;
+
+export const metadata: Metadata = toolMetadata(tool);
 
 export default function JsonFormatterPage() {
-  const tool = getWorkshopTool("json-formatter")!;
   return (
     <WorkshopToolShell tool={tool}>
       <JsonFormatterTool />
