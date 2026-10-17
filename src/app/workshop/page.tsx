@@ -10,10 +10,18 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Free Online Tools – Private, No Upload | Sabela Logic",
   description:
-    "Free browser-based tools: word counter, JSON formatter, image compressor, image to PDF and a website UX analyzer. No signup, and files never leave your device.",
+    "Free browser-based tools: merge and split PDF, PDF to JPG, HEIC to JPG, image resizer, QR code generator, password generator and more. No signup, nothing uploaded.",
   path: "/workshop",
   ogImage: "/og/workshop",
 });
+
+const TOOL_GROUPS = [
+  { title: "PDF TOOLS", tags: ["PDF"] },
+  { title: "IMAGE TOOLS", tags: ["IMAGE"] },
+  { title: "TEXT TOOLS", tags: ["TEXT"] },
+  { title: "DEVELOPER TOOLS", tags: ["CODE"] },
+  { title: "EVERYDAY & WEB", tags: ["UTILITY", "SECURITY", "SCAN"] },
+];
 
 export default function WorkshopIndex() {
   return (
@@ -35,28 +43,41 @@ export default function WorkshopIndex() {
               in leaves your device.
             </p>
 
-            <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-px border border-hairline bg-hairline">
-              {WORKSHOP_TOOLS.map((tool) => (
-                <Link
-                  key={tool.slug}
-                  href={`/workshop/${tool.slug}`}
-                  className="sl-card-hover flex flex-col gap-4 border border-transparent bg-ink px-[clamp(18px,2.4vw,28px)] py-[clamp(20px,2.8vw,30px)]"
-                >
-                  <div className="flex items-center justify-between gap-3 text-[10px] tracking-[0.16em] text-grey-darker">
-                    <span className="text-signal">{tool.tag}</span>
+            <div className="flex flex-col gap-12">
+              {TOOL_GROUPS.map((group) => {
+                const tools = WORKSHOP_TOOLS.filter((t) => group.tags.includes(t.tag));
+                if (!tools.length) return null;
+                return (
+                  <div key={group.title}>
+                    <h2 className="mb-4 text-[11px] font-normal tracking-[0.22em] text-grey">
+                      {group.title} <span className="text-grey-darker">· {tools.length}</span>
+                    </h2>
+                    <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-px border border-hairline bg-hairline">
+                      {tools.map((tool) => (
+                        <Link
+                          key={tool.slug}
+                          href={`/workshop/${tool.slug}`}
+                          className="sl-card-hover flex flex-col gap-4 border border-transparent bg-ink px-[clamp(18px,2.4vw,28px)] py-[clamp(20px,2.8vw,30px)]"
+                        >
+                          <div className="flex items-center justify-between gap-3 text-[10px] tracking-[0.16em] text-grey-darker">
+                            <span className="text-signal">{tool.tag}</span>
+                          </div>
+                          <h3 className="m-0 font-display text-[19px] font-semibold leading-[1.24] tracking-[-0.01em]">
+                            <AccentText text={tool.name} />
+                          </h3>
+                          <p className="m-0 flex-1 text-[12.5px] leading-[1.7] text-bone-dim" style={{ textWrap: "pretty" }}>
+                            {tool.description}
+                          </p>
+                          <div className="flex items-center justify-between text-[11px] text-grey">
+                            <span>{tool.tagline}</span>
+                            <span className="text-signal">OPEN →</span>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                  <h2 className="m-0 font-display text-[19px] font-semibold leading-[1.24] tracking-[-0.01em]">
-                    <AccentText text={tool.name} />
-                  </h2>
-                  <p className="m-0 flex-1 text-[12.5px] leading-[1.7] text-bone-dim" style={{ textWrap: "pretty" }}>
-                    {tool.description}
-                  </p>
-                  <div className="flex items-center justify-between text-[11px] text-grey">
-                    <span>{tool.tagline}</span>
-                    <span className="text-signal">OPEN →</span>
-                  </div>
-                </Link>
-              ))}
+                );
+              })}
             </div>
           </div>
         </section>
