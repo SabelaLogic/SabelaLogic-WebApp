@@ -7,11 +7,13 @@ import { BlogCTA } from "@/components/marketing/BlogCTA";
 import { BLOG_POSTS } from "@/lib/data/blog-content";
 import { AccentText } from "@/components/marketing/AccentText";
 import { LiveDot } from "@/components/marketing/LiveDot";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Blog — Sabela Logic",
   description: "Practical reads on where software and automation actually pay off for South African businesses.",
-};
+  path: "/blog",
+});
 
 export default function BlogIndex() {
   return (

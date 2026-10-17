@@ -5,10 +5,13 @@ import { Footer } from "@/components/marketing/Footer";
 import type { WorkshopTool } from "@/lib/data/workshop-tools";
 import { AccentText } from "@/components/marketing/AccentText";
 import { LiveDot } from "@/components/marketing/LiveDot";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { toolJsonLd } from "@/lib/seo";
 
 export function WorkshopToolShell({ tool, children }: { tool: WorkshopTool; children: ReactNode }) {
   return (
     <div className="max-w-full overflow-x-hidden bg-ink font-mono text-bone">
+      <JsonLd data={toolJsonLd(tool)} />
       <Nav />
       <main id="main-content">
         <section className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(48px,6vw,72px)]">
@@ -23,10 +26,10 @@ export function WorkshopToolShell({ tool, children }: { tool: WorkshopTool; chil
               <LiveDot />
               <span>{tool.tag}</span>
               <span className="text-grey-darker">·</span>
-              <span className="text-grey">FREE — RUNS IN YOUR BROWSER</span>
+              <span className="text-grey">{tool.runsInBrowser ? "FREE — RUNS IN YOUR BROWSER" : "FREE — NO SIGNUP"}</span>
             </div>
             <h1 className="mb-4 font-display text-[clamp(28px,4vw,44px)] font-extrabold leading-[1.06] tracking-[-0.025em]">
-              <AccentText text={tool.name} />
+              <AccentText text={tool.heading} />
             </h1>
             <p className="mb-10 max-w-[60ch] text-[14px] leading-[1.75] text-bone-dim" style={{ textWrap: "pretty" }}>
               {tool.description}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
 import { GeneratorSection } from "@/components/marketing/GeneratorSection";
@@ -6,11 +7,12 @@ import { ContactSection } from "@/components/marketing/ContactSection";
 import { AccentText } from "@/components/marketing/AccentText";
 import { LiveDot } from "@/components/marketing/LiveDot";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Start a Build — Sabela Logic",
   description:
     "Describe what you want built, get an instant architecture plan, then send the brief straight through for a fixed quote.",
-};
+  path: "/start-a-build",
+});
 
 export default function StartABuildPage() {
   return (

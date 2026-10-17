@@ -7,6 +7,7 @@ import { NewsletterSection } from "@/components/marketing/NewsletterSection";
 import { BLOG_POSTS, getBlogPost } from "@/lib/data/blog-content";
 import { AccentText } from "@/components/marketing/AccentText";
 import { LiveDot } from "@/components/marketing/LiveDot";
+import { pageMetadata } from "@/lib/seo";
 
 type Params = Promise<{ slug: string }>;
 
@@ -17,10 +18,13 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPost(slug);
-  return {
-    title: post ? `${post.title} — Sabela Logic` : "Sabela Logic",
-    description: post?.excerpt,
-  };
+  if (!post) return { title: "Sabela Logic" };
+  return pageMetadata({
+    title: `${post.title} — Sabela Logic`,
+    description: post.excerpt,
+    path: `/blog/${post.slug}`,
+    ogType: "article",
+  });
 }
 
 export default async function BlogPostPage({ params }: { params: Params }) {

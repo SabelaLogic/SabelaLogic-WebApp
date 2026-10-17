@@ -12,10 +12,21 @@ import { GeneratorSection } from "@/components/marketing/GeneratorSection";
 import { ServicesSection } from "@/components/marketing/ServicesSection";
 import { ContactSection } from "@/components/marketing/ContactSection";
 import { Footer } from "@/components/marketing/Footer";
+import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { organizationJsonLd, pageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Sabela Logic — Systems that ship",
+  description:
+    "I build software that carries real weight — payments that clear, one-time PINs that arrive, databases at the edge, deploy pipelines that run without me.",
+  path: "/",
+});
 
 export default function Home() {
   return (
     <div className="max-w-full overflow-x-hidden bg-ink font-mono">
+      <JsonLd data={organizationJsonLd()} />
       <Nav />
       <SectionRail />
       <main id="main-content">

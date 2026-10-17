@@ -5,11 +5,15 @@ import { Footer } from "@/components/marketing/Footer";
 import { WORKSHOP_TOOLS } from "@/lib/data/workshop-tools";
 import { AccentText } from "@/components/marketing/AccentText";
 import { LiveDot } from "@/components/marketing/LiveDot";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Workshop Tools — Sabela Logic",
-  description: "Free tools that run entirely in your browser — no signup, nothing uploaded.",
-};
+export const metadata: Metadata = pageMetadata({
+  title: "Free Online Tools – Private, No Upload | Sabela Logic",
+  description:
+    "Free browser-based tools: word counter, JSON formatter, image compressor, image to PDF and a website UX analyzer. No signup, and files never leave your device.",
+  path: "/workshop",
+  ogImage: "/og/workshop",
+});
 
 export default function WorkshopIndex() {
   return (
