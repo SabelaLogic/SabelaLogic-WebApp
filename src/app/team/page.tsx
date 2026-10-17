@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import { Nav } from "@/components/marketing/Nav";
 import { Footer } from "@/components/marketing/Footer";
@@ -7,10 +8,11 @@ import { CONTACT } from "@/lib/data/site-content";
 import { AccentText } from "@/components/marketing/AccentText";
 import { LiveDot } from "@/components/marketing/LiveDot";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Team — Sabela Logic",
   description: "Sabela Logic is built by one operator, with specialists brought in per build where the job needs it.",
-};
+  path: "/team",
+});
 
 export default function TeamPage() {
   return (
