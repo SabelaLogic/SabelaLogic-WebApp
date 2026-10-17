@@ -7,6 +7,7 @@ import { getCustomerFromSession, SESSION_COOKIE } from "@/lib/auth";
 
 export const metadata: Metadata = {
   title: "Build Tracker — Sabela Logic Client Portal",
+  robots: { index: false, follow: false },
 };
 
 interface ProjectRow {

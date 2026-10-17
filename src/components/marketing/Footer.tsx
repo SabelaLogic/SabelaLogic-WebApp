@@ -15,7 +15,7 @@ export function Footer() {
             className="block h-[140px] w-[117px] self-start"
           />
           <span className="max-w-[30ch] text-[11.5px] leading-[1.8] text-grey">
-            Pretoria, Rustenburg, Bloemfontein, Cape Town, Port Elizabeth, South Africa.
+            Based in South Africa. Building for clients worldwide.
             <br />
             Systems, software and AI — built by one person, end to end.
           </span>

@@ -7,6 +7,7 @@ import { AcceptanceForm } from "@/components/acceptance/AcceptanceForm";
 
 export const metadata: Metadata = {
   title: "Acceptance of Agreement — Sabela Logic",
+  robots: { index: false, follow: false },
 };
 
 export default async function AcceptancePage() {
