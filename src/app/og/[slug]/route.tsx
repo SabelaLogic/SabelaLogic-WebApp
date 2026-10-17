@@ -88,7 +88,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ slug: s
             <span style={{ color: SIGNAL }}>O</span>
             <span>GIC</span>
           </div>
-          <div style={{ fontSize: 24, color: BONE_DIM }}>[REDACTED].co.za</div>
+          <div style={{ fontSize: 24, color: BONE_DIM }}>sabelalogic.co.za</div>
         </div>
       </div>
     ),

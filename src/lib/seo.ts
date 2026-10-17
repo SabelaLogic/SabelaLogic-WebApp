@@ -6,7 +6,7 @@ import type { WorkshopTool } from "@/lib/data/workshop-tools";
  * sitemap, robots, Open Graph, JSON-LD) builds from this, so a future domain
  * move (e.g. to a .com) is a one-line change plus a 301 at Cloudflare.
  */
-export const SITE_URL = "https://[REDACTED].co.za";
+export const SITE_URL = "https://sabelalogic.co.za";
 export const SITE_NAME = "Sabela Logic";
 export const DEFAULT_OG_IMAGE = "/og/default";
 
