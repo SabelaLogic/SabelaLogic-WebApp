@@ -16,6 +16,8 @@ const eslintConfig = defineConfig([
     ".open-next/**",
     ".wrangler/**",
     "cloudflare-env.d.ts",
+    // Third-party libraries vendored as-is for the Workshop tools:
+    "public/vendor/**",
   ]),
 ]);
 
