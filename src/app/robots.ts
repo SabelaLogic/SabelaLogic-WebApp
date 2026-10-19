@@ -8,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: "*",
         allow: "/",
         // Client-only and API surfaces — nothing there for search engines.
-        disallow: ["/api/", "/portal", "/acceptance", "/login"],
+        disallow: ["/svc/", "/portal", "/acceptance", "/login"],
       },
     ],
     sitemap: absoluteUrl("/sitemap.xml"),

@@ -70,7 +70,7 @@ export function AcceptanceForm({ clientName }: { clientName: string }) {
     const ip = await getIP();
 
     try {
-      const res = await fetch("/api/acceptance", { method: "POST" });
+      const res = await fetch("/svc/acceptance", { method: "POST" });
       if (!res.ok) throw new Error(`api ${res.status}`);
 
       await recordLegalAcknowledgement({
