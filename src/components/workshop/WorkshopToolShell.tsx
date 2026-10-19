@@ -9,9 +9,12 @@ import { LiveDot } from "@/components/marketing/LiveDot";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { toolJsonLd } from "@/lib/seo";
 import { faqJsonLd } from "@/lib/structured-data";
+import { PaystackDepositButton } from "@/components/monetization/PaystackDepositButton";
+import { GUMROAD_BASE, TOOL_GUMROAD, TOOL_SETUP_DEPOSIT_ZAR } from "@/lib/monetization/config";
 
 export function WorkshopToolShell({ tool, children }: { tool: WorkshopTool; children: ReactNode }) {
   const content = getToolContent(tool.slug);
+  const gumroad = TOOL_GUMROAD[tool.slug];
   const related = (content?.related ?? []).map(getWorkshopTool).filter((t): t is WorkshopTool => !!t);
 
   return (
@@ -115,16 +118,29 @@ export function WorkshopToolShell({ tool, children }: { tool: WorkshopTool; chil
             <div>
               <div className="mb-1.5 text-[11px] tracking-[0.18em] text-signal">NEED SOMETHING MORE?</div>
               <p className="m-0 text-[13px] leading-[1.6] text-bone-dim">
-                Free tools cover the basics. For a real system built around your business, start a build.
+                Free tools cover the basics. Want it set up around your business? Pay a deposit and I&rsquo;ll be in touch to scope it.
               </p>
             </div>
-            <Link
-              href="/start-a-build"
-              className="sl-btn-outline flex shrink-0 items-center gap-[7px] rounded-[2px] border border-signal px-5 py-3 text-[12px] font-bold tracking-[0.06em] text-signal"
-            >
-              START A BUILD →
-            </Link>
+            <div className="flex flex-wrap items-center gap-3">
+              <PaystackDepositButton amountZar={TOOL_SETUP_DEPOSIT_ZAR} item={`workshop-setup:${tool.slug}`} />
+              <Link href="/services" className="text-[12px] text-grey underline-offset-4 hover:text-signal hover:underline">
+                Fixed-price services →
+              </Link>
+            </div>
           </div>
+          {gumroad && (
+            <p className="mx-auto mt-4 max-w-[860px] text-[12px] text-grey">
+              Get the full version:{" "}
+              <a
+                href={`${GUMROAD_BASE}${gumroad.slug}`}
+                target="_blank"
+                rel="noopener"
+                className="text-signal underline-offset-4 hover:underline"
+              >
+                {gumroad.title} →
+              </a>
+            </p>
+          )}
         </section>
       </main>
       <Footer />
