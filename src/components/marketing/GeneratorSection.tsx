@@ -24,7 +24,7 @@ export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { 
     setError("");
     setOutput("");
     try {
-      const res = await fetch("/api/generate", {
+      const res = await fetch("/svc/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ brief: trimmed, kind }),
@@ -47,7 +47,7 @@ export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { 
       window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 70, behavior: "smooth" });
     }
     window.dispatchEvent(
-      new CustomEvent("sabelalogic:send-to-brief", { detail: { kind, generated: output } }),
+      new CustomEvent("[REDACTED]:send-to-brief", { detail: { kind, generated: output } }),
     );
   };
 

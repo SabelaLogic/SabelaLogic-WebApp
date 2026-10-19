@@ -48,7 +48,7 @@ export function JourneyVisualizer({
 }: JourneyVisualizerProps) {
   const router = useRouter();
   const signOut = async () => {
-    await fetch("/api/auth/logout", { method: "POST" }).catch(() => {});
+    await fetch("/svc/auth/logout", { method: "POST" }).catch(() => {});
     router.push("/login");
   };
   const current = Math.min(Math.max(Number(currentStage) || 3, 1), 5);

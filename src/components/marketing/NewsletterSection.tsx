@@ -22,10 +22,10 @@ export function NewsletterSection() {
     }
     setSending(true);
     try {
-      const res = await fetch("/api/newsletter", {
+      const res = await fetch("/svc/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source: "sabelalogic.co.za/blog" }),
+        body: JSON.stringify({ email, source: "[REDACTED].co.za/blog" }),
       });
       const data = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) throw new Error(data.error || "Could not subscribe.");

@@ -47,7 +47,7 @@ export function UxAnalyzerTool() {
     setUnlocked(false);
     setScanning(true);
     try {
-      const res = await fetch("/api/tools/ux-analyze", {
+      const res = await fetch("/svc/tools/ux-analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
@@ -71,7 +71,7 @@ export function UxAnalyzerTool() {
     }
     setUnlocking(true);
     try {
-      await fetch("/api/tools/ux-lead", {
+      await fetch("/svc/tools/ux-lead", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, url: result?.url, score: result?.score }),
