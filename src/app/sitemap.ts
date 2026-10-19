@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/", 1, "weekly"),
     entry("/workshop", 0.9, "weekly"),
     ...WORKSHOP_TOOLS.map((tool) => entry(toolPath(tool), 0.8)),
+    entry("/services", 0.8),
     entry("/start-a-build", 0.7),
     entry("/blog", 0.6, "weekly"),
     ...BLOG_POSTS.map((post) => entry(`/blog/${post.slug}`, 0.5)),
