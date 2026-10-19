@@ -63,7 +63,7 @@ export function PaystackDepositButton({
         metadata: { item, custom_fields: [{ display_name: "Item", variable_name: "item", value: item }] },
         onSuccess: async (tx: { reference: string }) => {
           setStatus("Payment received — confirming…");
-          const res = await fetch("/api/paystack/verify", {
+          const res = await fetch("/pay/verify", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ reference: tx.reference }),
