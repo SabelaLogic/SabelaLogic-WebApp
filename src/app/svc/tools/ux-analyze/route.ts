@@ -183,7 +183,7 @@ export async function POST(request: Request) {
     const res = await fetch(parsed.toString(), {
       signal: controller.signal,
       redirect: "follow",
-      headers: { "user-agent": "SabelaLogicWorkshopBot/1.0 (+https://[REDACTED].co.za/workshop)" },
+      headers: { "user-agent": "SabelaLogicWorkshopBot/1.0 (+https://sabelalogic.co.za/workshop)" },
     });
     clearTimeout(timeout);
 
