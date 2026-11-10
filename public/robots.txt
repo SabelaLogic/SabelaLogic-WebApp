@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://suite.sabelalogic.co.za/sitemap.xml
