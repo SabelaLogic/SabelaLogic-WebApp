@@ -289,9 +289,25 @@ export const FOOTER_COLUMNS: FooterColumn[] = [
       { label: "Architecture generator", href: "/#generator" },
       { label: "Blog", href: "/blog" },
       { label: "Workshop tools", href: "/workshop" },
+      { label: "Fixed-price services", href: "/services" },
       { label: "Team", href: "/team" },
       { label: "Start a build", href: "/start-a-build" },
       { label: "Contact", href: "/#contact" },
+    ],
+  },
+  {
+    // Crawlable links to the most-used Workshop tools from every page, so
+    // they aren't only reachable through /workshop.
+    head: "FREE TOOLS",
+    links: [
+      { label: "Image Converter", href: "/workshop/image-converter" },
+      { label: "HEIC to JPG", href: "/workshop/heic-to-jpg" },
+      { label: "Image Compressor", href: "/workshop/image-compressor" },
+      { label: "Merge PDF", href: "/workshop/merge-pdf" },
+      { label: "QR Code Generator", href: "/workshop/qr-code-generator" },
+      { label: "Password Generator", href: "/workshop/password-generator" },
+      { label: "Word Counter", href: "/workshop/word-counter" },
+      { label: "All tools", href: "/workshop" },
     ],
   },
   {
