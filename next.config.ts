@@ -9,6 +9,19 @@ const nextConfig: NextConfig = {
   // Clean URLs for the static legal pages in public/. On Cloudflare the
   // assets layer already serves /terms from terms.html before the worker
   // runs, so these mainly cover `next start` and any other host.
+  // Preview / default hosts (the *.workers.dev URL of this Worker, version
+  // previews, any *.pages.dev mirror) serve the same pages as the real domain.
+  // They already carry a canonical to the apex, but an explicit noindex keeps
+  // them out of the index entirely so Google never weighs them as duplicates.
+  async headers() {
+    return [
+      ...[".*\\.workers\\.dev", ".*\\.pages\\.dev"].map((host) => ({
+        source: "/:path*",
+        has: [{ type: "host" as const, value: host }],
+        headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }],
+      })),
+    ];
+  },
   async redirects() {
     return [
       // Canonical host: 301 www → apex so every page exists exactly once for

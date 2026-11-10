@@ -15,7 +15,7 @@ export const PAYSTACK_CURRENCY = "ZAR";
 /** PLACEHOLDER: deposit for the "Set it up for me" button on Workshop tool pages. */
 export const TOOL_SETUP_DEPOSIT_ZAR = 500;
 
-export const GUMROAD_BASE = "https://[REDACTED].gumroad.com/l/";
+export const GUMROAD_BASE = "https://sabelalogic.gumroad.com/l/";
 
 /** Workshop tool slug → Gumroad product. Tools not listed are GAPs (no link). See research/yt-monetization/tool-gumroad-map.md. */
 export const TOOL_GUMROAD: Record<string, { slug: string; title: string }> = {

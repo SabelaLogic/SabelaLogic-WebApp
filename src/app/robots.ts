@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE_URL, absoluteUrl } from "@/lib/seo";
+import { absoluteUrl } from "@/lib/seo";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -11,7 +11,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/svc/", "/portal", "/acceptance", "/login"],
       },
     ],
+    // No `host:` line — it's a Yandex-only directive Google ignores; the
+    // canonical host is enforced by the www → apex 301 and canonical tags.
     sitemap: absoluteUrl("/sitemap.xml"),
-    host: SITE_URL,
   };
 }

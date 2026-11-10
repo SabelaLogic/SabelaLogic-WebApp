@@ -47,7 +47,7 @@ export function GeneratorSection({ eyebrow = "05 / ARCHITECTURE GENERATOR" }: { 
       window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 70, behavior: "smooth" });
     }
     window.dispatchEvent(
-      new CustomEvent("[REDACTED]:send-to-brief", { detail: { kind, generated: output } }),
+      new CustomEvent("sabelalogic:send-to-brief", { detail: { kind, generated: output } }),
     );
   };
 

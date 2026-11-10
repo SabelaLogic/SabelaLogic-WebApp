@@ -7,6 +7,10 @@ import { AccentText } from "@/components/marketing/AccentText";
 import { LiveDot } from "@/components/marketing/LiveDot";
 import { PaystackDepositButton } from "@/components/monetization/PaystackDepositButton";
 import { GUMROAD_BASE, SERVICE_OFFERS } from "@/lib/monetization/config";
+import { FaqList, StepList } from "@/components/marketing/FaqList";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { faqJsonLd } from "@/lib/structured-data";
+import { SERVICES_FAQS, SERVICES_STEPS } from "@/lib/data/page-content";
 
 export const metadata: Metadata = pageMetadata({
   title: "Fixed-Price Setup Services — Sabela Logic",
@@ -20,6 +24,7 @@ const zar = (n: number) => `R${n.toLocaleString("en-ZA")}`;
 export default function ServicesPage() {
   return (
     <div className="max-w-full overflow-x-hidden bg-ink font-mono text-bone">
+      <JsonLd data={faqJsonLd(SERVICES_FAQS)} />
       <Nav />
       <main id="main-content">
         <section className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(56px,7vw,96px)]">
@@ -79,6 +84,25 @@ export default function ServicesPage() {
               Start a build →
             </Link>
           </p>
+        </section>
+
+        <section className="border-b border-hairline px-[clamp(16px,4vw,48px)] py-[clamp(40px,5vw,64px)]">
+          <div className="mx-auto flex max-w-[1000px] flex-col gap-12">
+            <div>
+              <h2 className="mb-5 font-display text-[clamp(20px,2.6vw,26px)] font-semibold tracking-[-0.01em]">
+                How a fixed-price setup works
+              </h2>
+              <StepList steps={SERVICES_STEPS} />
+            </div>
+            <FaqList faqs={SERVICES_FAQS} />
+            <p className="m-0 text-[12px] text-grey">
+              Looking for something free?{" "}
+              <Link href="/workshop" className="text-signal underline-offset-4 hover:underline">
+                Browse the Workshop tools →
+              </Link>{" "}
+              · <a href="/refund.html" className="text-signal underline-offset-4 hover:underline">Refund policy</a>
+            </p>
+          </div>
         </section>
       </main>
       <Footer />

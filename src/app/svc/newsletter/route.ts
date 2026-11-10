@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     source?: string;
   };
   const email = body.email?.trim().toLowerCase() ?? "";
-  const source = body.source ?? "[REDACTED].co.za";
+  const source = body.source ?? "sabelalogic.co.za";
 
   if (!withinMax(email, MAX_LENGTHS.email) || !isValidEmail(email)) {
     return NextResponse.json({ error: "Enter a valid email address." }, { status: 400 });

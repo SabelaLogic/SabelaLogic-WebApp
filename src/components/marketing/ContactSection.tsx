@@ -41,8 +41,8 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
         brief: f.brief + "\n\n--- generated build brief ---\n" + detail.generated,
       }));
     };
-    window.addEventListener("[REDACTED]:send-to-brief", onHandoff);
-    return () => window.removeEventListener("[REDACTED]:send-to-brief", onHandoff);
+    window.addEventListener("sabelalogic:send-to-brief", onHandoff);
+    return () => window.removeEventListener("sabelalogic:send-to-brief", onHandoff);
   }, []);
 
   const setField = (key: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -67,7 +67,7 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
       const res = await fetch("/svc/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, source: "[REDACTED].co.za" }),
+        body: JSON.stringify({ ...form, source: "sabelalogic.co.za" }),
       });
       if (!res.ok) throw new Error("bad status");
       setSending(false);
@@ -78,7 +78,7 @@ export function ContactSection({ eyebrow = "07 / CONTACT" }: { eyebrow?: string 
       // fall through to WhatsApp
     }
     const msg = [
-      "New brief from [REDACTED].co.za",
+      "New brief from sabelalogic.co.za",
       "",
       "Name: " + form.name,
       "Contact: " + form.contact,
